@@ -77,4 +77,4 @@ packages:
     url: http://github.com/deep126/esphome
     ref: master
     refresh: 5min
-    file: packages/core/esp8266-nodemcuv2-core.yaml
+    file: packages/core/esp8266-core.yaml
