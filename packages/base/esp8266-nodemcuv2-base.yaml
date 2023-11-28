@@ -9,13 +9,6 @@ substitutions:
   board: nodemcuv2
 
   ####
-  # SETTINGS
-  debounce_time: 200ms
-  delayed_off_time: 5s
-  blink_on_state: "true"
-  status_led_inverted: "true"
-
-  ####
   # PIN MAPPING
   
   # LED CONTROL
@@ -79,5 +72,6 @@ packages:
     refresh: 5min
     files: 
       - packages/core/esp8266-core.yaml
+      - packages/core/esp-default-settings.yaml
       - packages/core/esp8266-connectivity.yaml
       - packages/core/esp8266-buzzer.yaml
