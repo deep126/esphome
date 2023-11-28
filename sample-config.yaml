@@ -66,5 +66,35 @@ binary_sensor:
       - delayed_on: $debounce_time
       - delayed_off: $delayed_off_time
 
+switch:
+  - platform: gpio
+    name: "Panel Lights"
+    id: panel_light_strip
+    pin:
+      number: $sensor3
+    on_turn_on:
+      - light.turn_on: panel_led
+    on_turn_off:
+      - light.turn_off: panel_led
+    
+  - platform: template
+    name: "${friendly_name} Buzzer Enabled"
+    id: buzzer_enabled
+    icon: mdi:volume-high
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_OFF
+    entity_category: config
+
+sensor:
+  - platform: dht
+    pin: $sensor4
+    temperature:
+      name: "${friendly_name} Temperature"
+      id: test_temperature
+    humidity:
+      name: "${friendly_name} Humidity"
+      id: test_humidity
+    update_interval: 60s
+    model: DHT22
 
 
