@@ -28,12 +28,12 @@ binary_sensor:
 
 sensor:
   - platform: uptime
-    name: Uptime
+    name: "${friendly_name} Uptime"
     entity_category: diagnostic
 
 text_sensor:
   - platform: template
-    name: Device ID
+    name: "${friendly_name} Device ID"
     id: device_id
     entity_category: diagnostic
     update_interval: never
