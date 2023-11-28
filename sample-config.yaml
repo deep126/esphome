@@ -1,0 +1,44 @@
+substitutions:
+  # Choose room/area for Home Assistant to assign
+  area: Office
+
+packages:
+
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files:
+      # BASE
+      # This package will set up board specific core features.
+      - packages/base/esp8266-nodemcuv2-base.yaml
+
+### REPLACE ORIGINAL CONFIG VALUE FOR 'esphome' AND DELETE 'board' ### 
+esphome:
+  name: ${name}
+  name_add_mac_suffix: true
+  friendly_name: ${friendly_name}
+
+### FROM THIS POINT ON DO NOT REPLACE ORIGINAL CONFIG VALUES###
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+ota:
+  password: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp8266-Test Fallback Hotspot"
+    password: "XXXXXXXXXXXX"
+
+captive_portal:
+
