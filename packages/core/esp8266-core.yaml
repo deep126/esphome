@@ -2,6 +2,7 @@ esphome:
   name: ${name}
   name_add_mac_suffix: True
   friendly_name: ${friendly_name}
+  area: ${area}
   project:
     name: $project_name
     version: $project_version
