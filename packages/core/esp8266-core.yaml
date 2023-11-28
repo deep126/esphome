@@ -17,7 +17,7 @@ esphome:
           state: !lambda 'return get_mac_address();'
 
 esp8266:
-  board: $board
+  board: ${board}
   restore_from_flash: True
 
 sensor:
