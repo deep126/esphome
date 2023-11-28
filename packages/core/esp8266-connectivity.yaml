@@ -22,5 +22,8 @@ sensor:
 text_sensor:
   - platform: wifi_info
     ip_address:
-      name: IP Address
+      name: "${friendly_name} IP Address"
+      entity_category: diagnostic
+    ssid:
+      name: "${friendly_name} Connected SSID"
       entity_category: diagnostic
