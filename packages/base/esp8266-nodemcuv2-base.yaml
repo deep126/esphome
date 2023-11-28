@@ -77,4 +77,7 @@ packages:
     url: http://github.com/deep126/esphome
     ref: master
     refresh: 5min
-    file: packages/core/esp8266-core.yaml
+    files: 
+      - packages/core/esp8266-core.yaml
+      - packages/core/esp8266-connectivity.yaml
+      - packages/core/esp8266-buzzer.yaml
