@@ -41,3 +41,30 @@ wifi:
 
 captive_portal:
 
+### FROM THIS POINT ADD SENSORS/COMPONENTS ####
+
+binary_sensor:
+
+  - id: kitchen_door_contact
+    name: Kitchen Door Contact Sensor
+    pin:
+      number: $sensor1
+      mode: INPUT_PULLUP
+    platform: gpio
+    device_class: door
+    filters:
+      - delayed_on_off: $debounce_time
+
+  - id: kitchen_motion
+    name: Kitchen Motion Sensor
+    pin:
+      number: $sensor2
+      mode: INPUT_PULLUP
+    platform: gpio   
+    device_class: motion
+    filters:
+      - delayed_on: $debounce_time
+      - delayed_off: $delayed_off_time
+
+
+
