@@ -12,7 +12,7 @@ esphome:
       - wait_until:
           api.connected:
       - logger.log: API is connected!
-      - rtttl.play: "success:d=24,o=5,b=100:c,g,b"
+      - rtttl.play: $success_beep
       - text_sensor.template.publish:
           id: device_id
           state: !lambda 'return get_mac_address();'
