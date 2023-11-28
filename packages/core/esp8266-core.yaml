@@ -21,6 +21,11 @@ esp8266:
   board: ${board}
   restore_from_flash: True
 
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} Status"
+    entity_category: diagnostic
+
 sensor:
   - platform: uptime
     name: Uptime
