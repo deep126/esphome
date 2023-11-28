@@ -16,7 +16,6 @@ packages:
 ### REPLACE ORIGINAL CONFIG VALUE FOR 'esphome' AND DELETE 'board' ### 
 esphome:
   name: ${name}
-  name_add_mac_suffix: true
   friendly_name: ${friendly_name}
 
 ### FROM THIS POINT ON DO NOT REPLACE ORIGINAL CONFIG VALUES###
