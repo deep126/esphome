@@ -1,0 +1,41 @@
+sensor:
+  - platform: pm1006
+    pm_2_5:
+      name: "Loft Air Quality Sensor"
+      id: loft_pm25
+      filters:
+        - sliding_window_moving_average:
+            window_size: 5
+            send_every: 5     
+
+  - platform: bme280
+    temperature:
+      name: "Loft Temperature"
+      oversampling: 16x
+      id: loft_temperature
+    pressure:
+      name: "Loft Pressure"
+      id: loft_pressure
+    humidity:
+      name: "Loft Humidity"
+      id: loft_humidity
+    i2c_id: bus_a
+    address: 0x76
+    update_interval: 60s
+
+  - platform: bh1750
+    name: "Loft Illuminance"
+    id: loft_illuminance
+    address: 0x23
+    update_interval: 60s
+
+  - platform: dht
+    pin: GPIO32
+    temperature:
+      name: "${friendly_name} Temperature"
+      id: test_temperature
+    humidity:
+      name: "${friendly_name} Humidity"
+      id: test_humidity
+    update_interval: 60s
+    model: DHT22
