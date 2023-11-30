@@ -1,0 +1,7 @@
+# MQTT broker configuration
+mqtt:
+  broker: !secret mqtt_broker
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  discovery: False # Only if you use the HA API usually
+  id: esphome
