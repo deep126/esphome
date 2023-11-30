@@ -1,0 +1,100 @@
+binary_sensor:
+
+  # Switch
+  - platform: gpio
+    name: "${friendly_name} Switch"
+    id: test_switch
+    pin: 
+      number: GPIO33
+      mode: INPUT_PULLUP
+    device_class: power
+    on_state:
+      then:
+        - if:
+            condition:
+              - binary_sensor.is_on: test_switch
+            then:
+              - light.toggle: test_light
+        - if:
+            condition:
+              - binary_sensor.is_off: test_switch
+            then:
+              - light.toggle: test_light
+
+  # Momentary Button
+  - platform: gpio
+    name: "${friendly_name} Button"
+    id: test_button
+    pin: 
+      number: GPIO26
+      mode: INPUT_PULLUP
+      inverted: True
+    filters:
+      - delayed_on_off: $sensor_debounce_time
+    on_press:
+      then:
+        - light.toggle: test_light
+
+  # Diagnostic
+  - platform: status
+    name: "${friendly_name} Status"
+    entity_category: diagnostic
+
+  # Motion sensor
+  - id: furnace_room_motion
+    name: Furnace Room Motion Sensor
+    pin:
+      number: $sensor5
+      mode: INPUT_PULLUP
+    platform: gpio   
+    device_class: motion
+    filters:
+      - delayed_on: $sensor_debounce_time
+      - delayed_off: $sensor_delayed_off_time
+
+  # Contact sensor
+  - platform: gpio
+    name: "${friendly_name} Contact Sensor"
+    id: contact_sensor
+    pin:
+      number: $sensor7
+      mode: INPUT_PULLUP
+    device_class: door
+    filters:
+      - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - if:
+            condition:
+              - binary_sensor.is_on: contact_sensor
+            then:
+              - switch.turn_on: relay_switch
+        - if:
+            condition:
+              - binary_sensor.is_off: contact_sensor
+            then:
+              - switch.turn_off: relay_switch
+
+  # Seat pressure sensor
+  - platform: gpio
+    id: test_seat_sensor
+    name: "${friendly_name} Occupancy"
+    pin: 
+      number: GPIO4
+      mode: INPUT_PULLUP
+      inverted: true
+    device_class: occupancy
+    filters:
+      - delayed_on: $sensor_debounce_time
+      - delayed_off: $sensor_delayed_off_time
+
+  # Capacitive touch sensor
+  - platform: esp32_touch
+    id: test_touch_sensor
+    name: "${friendly_name} Occupancy"
+    pin: GPIO13
+    threshold: 12
+    device_class: occupancy
+    filters:
+      - delayed_on: $sensor_debounce_time
+      - delayed_off: $sensor_delayed_off_time
