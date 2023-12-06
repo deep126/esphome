@@ -7,7 +7,7 @@ esphome:
     name: $project_name
     version: $project_version
   on_boot:
-    priority: -100.0
+    priority: 600.0
     then:
       - wait_until:
           api.connected:
