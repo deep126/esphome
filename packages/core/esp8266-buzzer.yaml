@@ -15,7 +15,7 @@ substitutions:
 
 output:
   - platform: esp8266_pwm
-    pin: $warning_beep_pin
+    pin: $buzzer1
     id: rtttl_out
 
 rtttl:
