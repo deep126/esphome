@@ -46,6 +46,8 @@ text_sensor:
     hide_timestamp: true
     name: "${friendly_name} ESPHome Version"
     entity_category: diagnostic
+  - platform: version
+    name: "ESPHome Version"
 
 button:
   - platform: restart
