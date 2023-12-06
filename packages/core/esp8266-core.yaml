@@ -21,6 +21,11 @@ esp8266:
   board: ${board}
   restore_from_flash: True
 
+globals:
+  - id: blink_on_state
+    type: bool
+    initial_value: $blink_on_state
+
 binary_sensor:
   - platform: status
     name: "${friendly_name} Status"
