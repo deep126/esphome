@@ -19,23 +19,23 @@ substitutions:
   status_led: D4
 
 
-  # GPIO5, SCL - 1
+  # GPIO5, SCL - Zone 1
   sensor1: D1
-  # GPIO4, SDA - 2
+  # GPIO4, SDA - Zone 2
   sensor2: D2
-  # GPIO14, HSCLK - 3
+  # GPIO14, HSCLK - Zone 3
   # Weak Pull Up
   sensor3: D5
-  # GPIO12, HMISO - 4
+  # GPIO12, HMISO - Zone 4
   # Weak Pull Up
   sensor4: D6
   
-  # BUZZER - 5
+  # BUZZER - Zone 5
   # GPIO13, CTSO, HMOSI
   # Weak Pull Up
   buzzer1: D7
 
-  # GPIO3, RX, RXD0 - 6
+  # GPIO3, RX, RXD0 - Zone 6
   input1: D9
 
   # GPIO15, RTS0, HCS
