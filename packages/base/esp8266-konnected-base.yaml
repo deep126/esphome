@@ -43,6 +43,13 @@ substitutions:
   # Weak Pull Up
   alarm: D8
 
+switch:   
+  - id: siren
+    name: Siren
+    pin: $alarm
+    platform: gpio
+    icon: mdi:bullhorn
+
 packages:
   remote_package:
     url: http://github.com/deep126/esphome
