@@ -1,0 +1,55 @@
+substitutions:
+
+  ####
+  # NAME
+  name: konnected-panel
+  friendly_name: Konnected Panel
+  project_name: deep126.esp8266-konnected-esphome-panel
+  project_version: "0.0.1"
+  board: nodemcuv2
+
+  ####
+  # PIN MAPPING
+  
+  # LED CONTROL
+  # GPIO2, TXD1
+  # Output only
+  # Restricted if high on boot
+  # Weak Pull Up
+  status_led: D4
+
+
+  # GPIO5, SCL - 1
+  sensor1: D1
+  # GPIO4, SDA - 2
+  sensor2: D2
+  # GPIO14, HSCLK - 3
+  # Weak Pull Up
+  sensor3: D5
+  # GPIO12, HMISO - 4
+  # Weak Pull Up
+  sensor4: D6
+  
+  # BUZZER - 5
+  # GPIO13, CTSO, HMOSI
+  # Weak Pull Up
+  buzzer1: D7
+
+  # GPIO3, RX, RXD0 - 6
+  input1: D9
+
+  # GPIO15, RTS0, HCS
+  # Restricted if low on boot
+  # Weak Pull Up
+  alarm: D8
+
+packages:
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files: 
+      - packages/core/esp8266-core.yaml
+      - packages/core/esp-default-settings.yaml
+      - packages/core/esp8266-connectivity.yaml
+      - packages/core/esp8266-buzzer.yaml
