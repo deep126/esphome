@@ -54,5 +54,5 @@ button:
     name: "Restart"
     entity_category: config
   - platform: safe_mode
-    name: "\Restart (Safe Mode)"
+    name: "Restart (Safe Mode)"
     entity_category: config
