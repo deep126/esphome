@@ -1,6 +1,30 @@
-switch:   
-  - id: siren
+alarm_control_panel:
+  platform: template
+  name: "$area Alarm Panel"
+  arming_away_time: 60s
+  arming_home_time: 30s
+  pending_time: 15s
+  trigger_time: 5min
+  on_state:
+    then:
+      - lambda: !lambda |-
+          ESP_LOGD("TEST", "State change %s", alarm_control_panel_state_to_string(id(acp1)->get_state()));
+  on_triggered:
+    then:
+      - switch.turn_on: siren
+  on_cleared:
+    then:
+      - switch.turn_off: siren
+
+switch:
+  - platform: gpio
+    id: siren
     name: Siren
+    icon: mdi:alarm-bell
     pin: $alarm
-    platform: gpio
-    icon: mdi:bullhorn
+
+binary_sensor:
+  - platform: homeassistant
+    id: alarm_trigger
+    name: Home Assistant Alarm
+    entity_id: input_boolean.activate_alarm
