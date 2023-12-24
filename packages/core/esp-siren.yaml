@@ -1,0 +1,6 @@
+switch:
+  - platform: gpio
+    id: siren
+    name: Siren
+    icon: mdi:alarm-light
+    pin: $alarm
