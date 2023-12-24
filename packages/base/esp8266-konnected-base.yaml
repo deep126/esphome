@@ -42,6 +42,7 @@ substitutions:
   # Restricted if low on boot
   # Weak Pull Up
   alarm: D8
+  out: D8
 
 switch:   
   - id: siren
