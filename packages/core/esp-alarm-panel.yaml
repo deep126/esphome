@@ -1,6 +1,7 @@
 alarm_control_panel:
   platform: template
   name: "$area Alarm Panel"
+  id: acp1
   arming_away_time: 60s
   arming_home_time: 30s
   pending_time: 15s
