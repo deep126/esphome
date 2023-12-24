@@ -6,3 +6,24 @@ substitutions:
   delayed_off_time: 5s
   blink_on_state: "true"
   invert_status_led: "true"
+
+  ####
+  # STATUS LED
+globals:
+  - id: blink_on_state
+    type: bool
+    initial_value: $blink_on_state
+
+light:
+  - platform: status_led
+    id: status_led_light
+    pin:
+      number: $status_led
+      inverted: $invert_status_led
+
+script:
+  - id: blink_status_led
+    then:
+      - light.turn_on: status_led_light
+      - delay: 100ms
+      - light.turn_off: status_led_light
