@@ -49,18 +49,6 @@ substitutions:
   # Restricted if low on boot
   # Weak Pull Up
   alarm: D8
-  out: D8
-
-  ####
-  # CONNECTION MAPPINGS
-  warning_beep_pin: $out
-
-switch:
-  - platform: gpio
-    id: siren
-    name: Siren
-    icon: mdi:alarm-light
-    pin: $alarm
 
 packages:
   remote_package:
