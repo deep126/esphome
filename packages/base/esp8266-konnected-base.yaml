@@ -9,6 +9,13 @@ substitutions:
   board: nodemcuv2
 
   ####
+  # SETTINGS
+  warning_beep_pulse_time: 100ms
+  warning_beep_pause_time: 130ms
+  warning_beep_internal_only: "false"
+  warning_beep_shared: "true"
+
+  ####
   # PIN MAPPING
   
   # LED CONTROL
@@ -43,6 +50,10 @@ substitutions:
   # Weak Pull Up
   alarm: D8
   out: D8
+
+  ####
+  # CONNECTION MAPPINGS
+  warning_beep_pin: $out
 
 switch:   
   - id: siren
