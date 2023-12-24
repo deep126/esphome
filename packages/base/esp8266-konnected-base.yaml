@@ -72,4 +72,4 @@ packages:
       - packages/core/esp-default-settings.yaml
       - packages/core/esp8266-connectivity.yaml
       - packages/core/esp8266-buzzer.yaml
-      - packages/core/esp8266-konnected-alarm.yaml
+      - packages/core/esp-alarm-panel.yaml
