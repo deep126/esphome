@@ -55,12 +55,12 @@ substitutions:
   # CONNECTION MAPPINGS
   warning_beep_pin: $out
 
-switch:   
-  - id: siren
+switch:
+  - platform: gpio
+    id: siren
     name: Siren
+    icon: mdi:alarm-light
     pin: $alarm
-    platform: gpio
-    icon: mdi:bullhorn
 
 packages:
   remote_package:
