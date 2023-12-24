@@ -16,13 +16,6 @@ alarm_control_panel:
     then:
       - switch.turn_off: siren
 
-switch:
-  - platform: gpio
-    id: siren
-    name: Siren
-    icon: mdi:alarm-light
-    pin: $alarm
-
 binary_sensor:
   - platform: homeassistant
     id: alarm_trigger
