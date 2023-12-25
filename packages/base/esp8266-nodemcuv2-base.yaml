@@ -75,3 +75,4 @@ packages:
       - packages/core/esp-default-settings.yaml
       - packages/core/esp8266-connectivity.yaml
       - packages/core/esp8266-buzzer.yaml
+      - packages/core/buzzer-sounds.yaml
