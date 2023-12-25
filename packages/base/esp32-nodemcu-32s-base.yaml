@@ -12,11 +12,12 @@ substitutions:
   # PIN MAPPING
   
   # LED CONTROL
-  # Pulled LOW, RTC, analog, Touch
+  # Pulled LOW, RTC, Analog, TOUCH
   status_led: GPIO2
 
   # BUZZER
-  # Pulled HIGH. Connected to BOOT Button
+  # Pulled HIGH. Connected to BOOT Button, can use as output
+  # RTC, Analog
   buzzer1: GPIO0
 
   # GENERAL PURPOSE GPIO
@@ -25,42 +26,61 @@ substitutions:
   # UART0_RXD
   sensor: GPIO3
   # Pulled LOW
+  # RTC, Analog, TOUCH
   sensor: GPIO4
   # Pulled HIGH
+  # VSPI_CS0
   sensor: GPIO5
   # Pulled LOW - Boot fails if pulled HIGH
+  # RTC, Analog, TOUCH
   sensor: GPIO12
-  # 
+  # RTC, Analog, TOUCH
   sensor: GPIO13
-  # 
+  # RTC, Analog, TOUCH
   sensor: GPIO14
   # Pulled HIGH
+  # RTC, Analog, TOUCH
   sensor: GPIO15
   # UART2_RXD
   sensor: GPIO16
   # UART2_TXD
   sensor: GPIO17
-  # 
+  # VSPI_CLK
   sensor: GPIO18
-  # 
+  # VSPI_MISO
   sensor: GPIO19
-  # 
+  # VSPI_MOSI
   sensor: GPIO23
-  # 
+  # RTC, Analog, DAC Channel 1
   sensor: GPIO25
-  # 
+  # RTC, Analog, DAC Channel 2
   sensor: GPIO26
-  # 
+  # RTC, Analog, TOUCH
   sensor: GPIO27
-  # 
+  # RTC, Analog, TOUCH
   sensor: GPIO32
-  # 
+  # RTC, Analog, TOUCH
   sensor: GPI033
+
+  # SPI Bus
+  spi_clk0: GPIO18
+  spi_cs0: GPIO5
+  spi_mosi0: GPIO23
+  spi_miso0: GPIO19
+  spi_clk1: GPIO14
+  spi_cs1: GPIO25
+  spi_mosi1: GPIO13
+  spi_miso1: GPIO12
   
   # INPUT ONLY PINS
-  input1: A0
-  # GPIO3, RX, RXD0
-  input1: D9
+  # RTC, Analog
+  input1: GPIO34
+  # RTC, Analog
+  input2: GPIO35
+  # RTC, Analog
+  input3: GPIO36
+  # RTC, Analog
+  input4: GPIO39
 
   # INTERNAL - Typically not used
   # Connected to SPI Flash IC
