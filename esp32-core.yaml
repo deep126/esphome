@@ -1,0 +1,50 @@
+esphome:
+  name: ${name}
+  name_add_mac_suffix: True
+  friendly_name: ${friendly_name}
+  area: ${area}
+  project:
+    name: $project_name
+    version: $project_version
+  on_boot:
+    priority: 600.0
+    then:
+      - text_sensor.template.publish:
+          id: device_id
+          state: !lambda 'return get_mac_address();'
+      - wait_until:
+          api.connected:
+      - logger.log: API is connected!
+      - rtttl.play: $success_beep
+
+esp32:
+  board: ${board}
+
+binary_sensor:
+  - platform: status
+    name: "Status"
+    entity_category: diagnostic
+
+sensor:
+  - platform: uptime
+    name: "Uptime"
+    entity_category: diagnostic
+
+text_sensor:
+  - platform: template
+    name: "Device ID"
+    id: device_id
+    entity_category: diagnostic
+    update_interval: never
+  - platform: version
+    name: "ESPHome Version"
+    hide_timestamp: true
+    entity_category: diagnostic
+
+button:
+  - platform: restart
+    name: "Restart"
+    entity_category: config
+  - platform: safe_mode
+    name: "Restart (Safe Mode)"
+    entity_category: config
