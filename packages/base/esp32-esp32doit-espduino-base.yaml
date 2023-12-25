@@ -2,7 +2,7 @@ substitutions:
 
   ####
   # NAME
-  name: esp32doit-espduino
+  name: espduino-32
   friendly_name: ESPHome
   project_name: deep126.esp32-esp32doit-espduino-esphome-panel
   project_version: "0.0.1"
