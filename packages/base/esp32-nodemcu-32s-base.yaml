@@ -1,0 +1,96 @@
+substitutions:
+
+  ####
+  # NAME
+  name: esphome-panel
+  friendly_name: ESPHome Panel
+  project_name: deep126.esp8266-nodemcuv2-esphome-panel
+  project_version: "0.0.1"
+  board: nodemcuv2
+
+  ####
+  # PIN MAPPING
+  
+  # LED CONTROL
+  # Pulled LOW, RTC, analog, Touch
+  status_led: GPIO2
+
+  # BUZZER
+  # Pulled HIGH. Connected to BOOT Button
+  buzzer1: GPIO0
+
+  # GENERAL PURPOSE GPIO
+  # UART0_TXD
+  sensor: GPIO1
+  # UART0_RXD
+  sensor: GPIO3
+  # Pulled LOW
+  sensor: GPIO4
+  # Pulled HIGH
+  sensor: GPIO5
+  # Pulled LOW - Boot fails if pulled HIGH
+  sensor: GPIO12
+  # 
+  sensor: GPIO13
+  # 
+  sensor: GPIO14
+  # Pulled HIGH
+  sensor: GPIO15
+  # UART2_RXD
+  sensor: GPIO16
+  # UART2_TXD
+  sensor: GPIO17
+  # 
+  sensor: GPIO18
+  # 
+  sensor: GPIO19
+  # 
+  sensor: GPIO23
+  # 
+  sensor: GPIO25
+  # 
+  sensor: GPIO26
+  # 
+  sensor: GPIO27
+  # 
+  sensor: GPIO32
+  # 
+  sensor: GPI033
+  
+  # INPUT ONLY PINS
+  input1: A0
+  # GPIO3, RX, RXD0
+  input1: D9
+
+  # INTERNAL - Typically not used
+  # Connected to SPI Flash IC
+  # 
+  internal1: GPIO6
+  #
+  internal2: GPIO7
+  # 
+  internal3: GPIO8
+  # 
+  internal4: GPIO9
+  # 
+  internal5: GPIO10
+  # 
+  internal6: GPIO11
+
+
+  # I2C
+  # I2C SDA
+  sdapin: GPIO21
+  # I2C SCL
+  sclpin: GPIO22
+
+packages:
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files: 
+      - packages/core/esP32-core.yaml
+      - packages/core/esp-default-settings.yaml
+      - packages/core/esp32-connectivity.yaml
+      - packages/core/esp32-buzzer.yaml
