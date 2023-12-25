@@ -15,7 +15,7 @@ bluetooth_proxy:
 
 sensor:
   - platform: wifi_signal
-    name: "${friendly_name} WiFi Signal"
+    name: "${friendly_name} WiFi Signal RSSI"
     id: wifi_signal_db
     entity_category: diagnostic
 
