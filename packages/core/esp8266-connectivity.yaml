@@ -6,7 +6,7 @@ web_server:
 
 sensor:
   - platform: wifi_signal
-    name: "WiFi Signal"
+    name: "WiFi Signal RSSI"
     id: wifi_signal_db
     entity_category: diagnostic
 
