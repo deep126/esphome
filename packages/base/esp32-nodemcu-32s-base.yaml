@@ -2,8 +2,8 @@ substitutions:
 
   ####
   # NAME
-  name: esphome-panel
-  friendly_name: ESPHome Panel
+  name: esphome-esp32-nodemcu-32s
+  friendly_name: ESPHome
   project_name: deep126.esp32-nodemcu-32s-esphome-panel
   project_version: "0.0.1"
   board: nodemcu-32s
