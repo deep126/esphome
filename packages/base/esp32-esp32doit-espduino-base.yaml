@@ -17,7 +17,7 @@ substitutions:
 
   # BUZZER
   # If buzzer needed choose a sensor to add to substitution in esphome yaml
-  # buzzer1: $sensor1
+  # buzzer1: GPIO0
 
   # GENERAL PURPOSE GPIO
   # UART0_TXD
