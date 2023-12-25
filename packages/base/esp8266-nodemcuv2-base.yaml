@@ -2,7 +2,7 @@ substitutions:
 
   ####
   # NAME
-  name: esphome-esp8266-nodemcuv2
+  name: esp8266-nodemcuv2
   friendly_name: ESPHome
   project_name: deep126.esp8266-nodemcuv2-esphome-panel
   project_version: "0.0.1"
