@@ -4,9 +4,9 @@ substitutions:
   # NAME
   name: esphome-panel
   friendly_name: ESPHome Panel
-  project_name: deep126.esp8266-nodemcuv2-esphome-panel
+  project_name: deep126.esp32-nodemcu-32s-esphome-panel
   project_version: "0.0.1"
-  board: nodemcuv2
+  board: nodemcu-32s
 
   ####
   # PIN MAPPING
