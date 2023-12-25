@@ -2,7 +2,7 @@ substitutions:
 
   ####
   # NAME
-  name: konnected-esp8266-panel
+  name: esp8266-konnected
   friendly_name: Konnected Panel
   project_name: deep126.esp8266-konnected-esphome-panel
   project_version: "0.0.1"
