@@ -60,5 +60,6 @@ packages:
       - packages/core/esp-default-settings.yaml
       - packages/core/esp8266-connectivity.yaml
       - packages/core/esp8266-buzzer.yaml
+      - packages/core/buzzer-sounds.yaml
       - packages/core/esp-alarm-panel.yaml
       - packages/core/esp-siren.yaml
