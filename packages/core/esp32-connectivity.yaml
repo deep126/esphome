@@ -4,15 +4,6 @@
 web_server:
   include_internal: true
 
-esp32_ble_tracker:
-  scan_parameters:
-    interval: 1500ms
-    window: 500ms
-    active: true
-
-bluetooth_proxy:
-  active: true
-
 sensor:
   - platform: wifi_signal
     name: "${friendly_name} WiFi Signal RSSI"
@@ -36,3 +27,12 @@ text_sensor:
     ssid:
       name: "${friendly_name} Connected SSID"
       entity_category: diagnostic
+
+esp32_ble_tracker:
+  scan_parameters:
+    interval: 1500ms
+    window: 500ms
+    active: true
+
+bluetooth_proxy:
+  active: true
