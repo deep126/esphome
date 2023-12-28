@@ -36,11 +36,13 @@ substitutions:
   # GPIO12, HMISO - Zone 4
   # Weak Pull Up
   sensor4: D6
-  
-  # BUZZER - Zone 5
-  # GPIO13, CTSO, HMOSI
+  # GPIO13, CTSO, HMOSI- Zone 5
   # Weak Pull Up
-  buzzer1: D7
+  sensor5: D7
+  
+  # BUZZER
+  # If using buzzer can't use sensor 5
+  buzzer1: $sensor5
 
   # GPIO3, RX, RXD0 - Zone 6
   input1: D9
@@ -57,9 +59,6 @@ packages:
     refresh: 5min
     files: 
       - packages/core/esp8266-core.yaml
-      - packages/core/esp-default-settings.yaml
-      - packages/core/esp8266-connectivity.yaml
-      - packages/core/esp8266-buzzer.yaml
-      - packages/core/buzzer-sounds.yaml
-      - packages/core/esp-alarm-panel.yaml
-      - packages/core/esp-siren.yaml
+      - packages/core/default-settings.yaml
+      - packages/core/connectivity.yaml
+      - packages/core/siren.yaml
