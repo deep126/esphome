@@ -50,7 +50,7 @@ substitutions:
   # GPIO15, RTS0, HCS
   # Restricted if low on boot
   # Weak Pull Up
-  alarm: D8
+  siren: D8
 
 packages:
   remote_package:
