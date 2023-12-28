@@ -2,7 +2,7 @@
 globals:
   - id: room_topic
     type: std::string
-    initial_value: '"espresence/devices/dummy_uuid/${area}"'
+    initial_value: '"espresence/devices/uuid/${area}"'
 
 # Configure the esp32_ble_tracker to push beacon advertisements to MQTT
 esp32_ble_tracker:
