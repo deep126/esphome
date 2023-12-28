@@ -1,0 +1,12 @@
+####
+# BLUETOOTH CONNECTIVITY
+# Not all esp32 devices have bluetooth or it is not needed for all devices
+
+esp32_ble_tracker:
+  scan_parameters:
+    interval: 1500ms
+    window: 500ms
+    active: true
+
+bluetooth_proxy:
+  active: true
