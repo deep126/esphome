@@ -134,7 +134,5 @@ packages:
     refresh: 5min
     files: 
       - packages/core/esp32-core.yaml
-      - packages/core/esp-default-settings.yaml
-      - packages/core/esp32-connectivity.yaml
-      - packages/core/esp32-buzzer.yaml
-      - packages/core/buzzer-sounds.yaml
+      - packages/core/default-settings.yaml
+      - packages/core/connectivity.yaml
