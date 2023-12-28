@@ -2,15 +2,22 @@
 globals:
   - id: room_topic
     type: std::string
-    initial_value: '"espresence/devices/uuid/${area}"'
+    initial_value: '"espresence/devices/${dummy_uuid}/${area}"'
+  - id: dummy_uuid
+    type: std::string
+    initial_value: "dummy_uuid"
+  - id: uuid
+    type: std::string
+    initial_value: "dummy_uuid"
 
 # Configure the esp32_ble_tracker to push beacon advertisements to MQTT
 esp32_ble_tracker:
   on_ble_advertise:
     - then:
         - lambda: |-
+            std::string uuid;
+            std::string dummy_uuid = id(uuid);
             if (x.get_ibeacon().has_value()) {
-                std::string uuid;
                 esp_bt_uuid_t raw_uuid = x.get_ibeacon().value().get_uuid().get_uuid();
                 char sbuf[64];
                 char *bpos = sbuf;
@@ -52,7 +59,8 @@ esp32_ble_tracker:
                         root["rssi"] = x.get_rssi();
                         root["tx_power"] = tx_power;
                         root["mac"] = mac;
-                        // Add the MAC address to the global variable for dynamic MQTT topic
+                        // Update the UUID to the global variable for dynamic MQTT topic
+                        id(uuid) = uuid;
                         id(room_topic) = std::string("espresence/devices/") + uuid + "/${area}";
                     });
                 } else {
