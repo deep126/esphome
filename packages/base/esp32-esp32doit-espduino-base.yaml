@@ -139,5 +139,3 @@ packages:
       - packages/core/esp32-core.yaml
       - packages/core/default-settings.yaml
       - packages/core/connectivity.yaml
-      - packages/core/esp32-buzzer.yaml
-      - packages/core/buzzer-sounds.yaml
