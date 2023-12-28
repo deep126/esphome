@@ -2,13 +2,7 @@
 globals:
   - id: room_topic
     type: std::string
-    initial_value: '"espresence/devices/${dummy_uuid}/${area}"'
-  - id: dummy_uuid
-    type: std::string
-    initial_value: "dummy_uuid"
-  - id: uuid
-    type: std::string
-    initial_value: "dummy_uuid"
+    initial_value: '"espresence/devices/dummy_uuid/${area}"'
 
 # Configure the esp32_ble_tracker to push beacon advertisements to MQTT
 esp32_ble_tracker:
@@ -59,8 +53,7 @@ esp32_ble_tracker:
                         root["tx_power"] = tx_power;
                         root["mac"] = mac;
                         // Update the UUID to the global variable for dynamic MQTT topic
-                        id(dummy_uuid) = uuid;
-                        id(room_topic) = std::string("espresence/devices/") + id(dummy_uuid) + "/${area}";
+                        id(room_topic) = std::string("espresence/devices/") + uuid + "/${area}";
                     });
                 } else {
                     ESP_LOGD("ble_adv", "Skipping MQTT room update for '%s' (%s): %.03fm (%d rssi, %d sigpow)",
