@@ -16,7 +16,6 @@ esp32_ble_tracker:
     - then:
         - lambda: |-
             std::string uuid;
-            std::string dummy_uuid = id(uuid);
             if (x.get_ibeacon().has_value()) {
                 esp_bt_uuid_t raw_uuid = x.get_ibeacon().value().get_uuid().get_uuid();
                 char sbuf[64];
@@ -60,8 +59,8 @@ esp32_ble_tracker:
                         root["tx_power"] = tx_power;
                         root["mac"] = mac;
                         // Update the UUID to the global variable for dynamic MQTT topic
-                        id(uuid) = uuid;
-                        id(room_topic) = std::string("espresence/devices/") + uuid + "/${area}";
+                        id(dummy_uuid) = uuid;
+                        id(room_topic) = std::string("espresence/devices/") + id(dummy_uuid) + "/${area}";
                     });
                 } else {
                     ESP_LOGD("ble_adv", "Skipping MQTT room update for '%s' (%s): %.03fm (%d rssi, %d sigpow)",
