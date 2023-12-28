@@ -1,6 +1,15 @@
+####################################################################
+########## REPLACE ORIGINAL CONFIG VALUES FROM THIS POINT ##########
+####################################################################
+
+# Delete everything through 'ap:' and replace with the following 
+
+# Set these substitutions as needed, examples are provided
 substitutions:
   # Choose room/area for Home Assistant to assign
-  area: Office
+  area: Test Room
+  device_name: test-room
+  device_friendly: $area
 
 packages:
 
@@ -11,32 +20,45 @@ packages:
     files:
       # BASE
       # This package will set up board specific core features.
+      # Uncomment which packages you want to include
       - packages/base/esp8266-nodemcuv2-base.yaml
+      # - packages/base/esp32-esp32doit-espduino-base.yaml
+      # - packages/core/mqtt.yaml
+      # - packages/core/ble_mqtt_room.yaml
 
-### REPLACE ORIGINAL CONFIG VALUE FOR 'esphome' AND DELETE 'board' ### 
+# Decide how the device should be named, examples are provided
+# The board name (name/friendly name) has been predefined in the base files
+# Board names will be added to the end of all names/friendly names in order to differentiate
 esphome:
-  name: ${name}
-  friendly_name: ${friendly_name}
-
-### FROM THIS POINT ON DO NOT REPLACE ORIGINAL CONFIG VALUES###
+  name: ${device_name}-${name}
+  friendly_name: ${device_friendly} ${friendly_name}
+  area: ${area}
+  
 # Enable logging
 logger:
 
 # Enable Home Assistant API
 api:
   encryption:
-    key: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    key: !secret encryption_key
 
 ota:
-  password: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  password: !secret ota_password
 
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
+  # use_address: 0.0.0.0
+
+####################################################################
+##### FROM THIS POINT ON DO NOT REPLACE ORIGINAL CONFIG VALUES #####
+####################################################################
+
+# The only thing we want to keep from the original config is the custom ap
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Esp8266-Test Fallback Hotspot"
+    ssid: "Test-Room"
     password: "XXXXXXXXXXXX"
 
 captive_portal:
