@@ -18,13 +18,27 @@ packages:
     ref: master
     refresh: 5min
     files:
-      # BASE
-      # This package will set up board specific core features.
-      # Uncomment which packages you want to include
+      ### BASE - BOARD SPECIFIC ###
+      # This package will set up board specific features.
       - packages/base/esp8266-nodemcuv2-base.yaml
+      # - packages/base/esp8266-konnected-base.yaml
+      # - packages/base/esp32-nodemcu-32s-base.yaml
       # - packages/base/esp32-esp32doit-espduino-base.yaml
-      # - packages/core/mqtt.yaml
+
+      ### CORE - SPECIFIC CORE COMPONENTS ###
+      # Uncomment which packages you want to include
+      ### ESP8266 Specific ###
+      # - packages/core/esp8266-buzzer.yaml
+
+      ### ESP32 Specific ###
+      # - packages/core/bluetooth-connectivity.yaml
       # - packages/core/ble_mqtt_room.yaml
+      # - packages/core/esp32-buzzer.yaml
+      
+      ### Global, Non-Specific ###
+      # - packages/core/buzzer-sounds.yaml
+      # - packages/core/mqtt.yaml
+      # - packages/core/alarm-panel.yaml
 
 # Decide how the device should be named, examples are provided
 # The board name (name/friendly name) has been predefined in the base files
@@ -63,7 +77,9 @@ wifi:
 
 captive_portal:
 
-### FROM THIS POINT ADD SENSORS/COMPONENTS ####
+####################################################################
+############## FROM THIS POINT ADD SENSORS/COMPONENTS ##############
+####################################################################
 
 binary_sensor:
 
