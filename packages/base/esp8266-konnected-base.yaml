@@ -52,6 +52,8 @@ packages:
     refresh: 5min
     files: 
       - packages/core/esp8266-core.yaml
+      - packages/core/esp8266-buzzer.yaml
+      - packages/core/buzzer-sounds.yaml
       - packages/core/default-settings.yaml
       - packages/core/connectivity.yaml
       - packages/core/siren.yaml
