@@ -135,4 +135,3 @@ packages:
     files: 
       - packages/core/esp32-core.yaml
       - packages/core/default-settings.yaml
-      - packages/core/connectivity.yaml
