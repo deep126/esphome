@@ -47,3 +47,11 @@ button:
   - platform: safe_mode
     name: "Restart (Safe Mode)"
     entity_category: config
+
+packages:
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files: 
+      - packages/core/esp8266-buzzer.yaml
