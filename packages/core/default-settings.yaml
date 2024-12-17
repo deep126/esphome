@@ -27,3 +27,11 @@ script:
       - light.turn_on: status_led_light
       - delay: 100ms
       - light.turn_off: status_led_light
+
+packages:
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files: 
+      - packages/core/connectivity.yaml
