@@ -5,3 +5,11 @@ output:
 
 rtttl:
   output: rtttl_out
+
+packages:
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files: 
+      - packages/core/buzzer-sounds.yaml
