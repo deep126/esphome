@@ -33,10 +33,13 @@ light:
 
 script:
   - id: blink_status_led
-    then:
-      - light.turn_on: status_led_light
-      - delay: 100ms
-      - light.turn_off: status_led_light
+      - if:
+          condition:
+            lambda: return id(blink_on_state);
+          then:
+            - light.turn_on: status_led_light
+            - delay: 100ms
+            - light.turn_off: status_led_light
 
 packages:
   remote_package:
