@@ -17,10 +17,10 @@ switch:
     name: "Blink On State"
     lambda: |-
       return id(blink_on_state);
-    on_turn_on:
+    turn_on_action:
       - lambda: |-
           id(blink_on_state) = true;
-    on_turn_off:
+    turn_off_action:
       - lambda: |-
           id(blink_on_state) = false;
           
