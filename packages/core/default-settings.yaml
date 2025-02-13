@@ -28,6 +28,7 @@ switch:
           
 light:
   - platform: status_led
+    name: "Status LED Light"
     id: status_led_light
     pin:
       number: $status_led
