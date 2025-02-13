@@ -5,7 +5,6 @@ substitutions:
   debounce_time: 200ms
   delayed_off_time: 5s
   blink_on_state: "true"
-  invert_status_led: "true"
 
   ####
   # STATUS LED
