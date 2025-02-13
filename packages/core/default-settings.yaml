@@ -15,8 +15,9 @@ globals:
 switch:
   - platform: template
     name: "Blink On State Toggle"
+    restore_mode: ALWAYS_ON
     lambda: |-
-      return id(blink_on_state);
+      return id(blink_on_state).state;
     turn_on_action:
       - lambda: |-
           id(blink_on_state) = true;
