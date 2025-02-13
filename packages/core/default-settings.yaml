@@ -33,6 +33,7 @@ light:
 
 script:
   - id: blink_status_led
+    then:
       - if:
           condition:
             lambda: return id(blink_on_state);
