@@ -13,58 +13,56 @@ substitutions:
   # PIN MAPPING
   
   # LED CONTROL
+  status_led: $sensor4
+  # D0, GPIO2, TXD1
+  # Output only
+  # Restricted if high on boot
+  # Weak Pull Up
+  
+  # BUZZER
+  buzzer1: GPIO1
+  # GPIO1, TX, TXD0
+
+  # GENERAL PURPOSE GPIO
+  sensor0: D0
+  # GPIO16, Wake
+  # Has pull-down (but no pull-up) resistor
+  # Weak Pull Down
+  sensor1: D1
+  # GPIO5, SCL
+  sensor2: D2
+  # GPIO4, SDA
+  sensor3: D3
+  # GPIO0, FLASH
+  # Restricted if high on boot
+  # Weak Pull Up
+  sensor4: D4
   # GPIO2, TXD1
   # Output only
   # Restricted if high on boot
   # Weak Pull Up
-  status_led: D4
-
-  # BUZZER
-  # GPIO1, TX, TXD0
-  buzzer1: GPIO1
-
-  # GENERAL PURPOSE GPIO
-  # GPIO0, FLASH
-  # Restricted if high on boot
-  # Weak Pull Up
-  sensor1: D3
-  # GPIO4, SDA
-  sensor2: D2
-  # GPIO5, SCL
-  sensor3: D1
-  # GPIO6, CLK, SCLK, SDCLK
-  # Weak Pull Up
-  sensor4: GPIO6
-  # GPIO12, HMISO
-  # Weak Pull Up
-  sensor5: D6
-  # GPIO13, CTSO, HMOSI
-  # Weak Pull Up
-  sensor6: D7
+  sensor5: D5
   # GPIO14, HSCLK
   # Weak Pull Up
-  sensor7: D5
+  sensor6: D6
+  # GPIO12, HMISO
+  # Weak Pull Up
+  sensor7: D7
+  # GPIO13, CTSO, HMOSI
+  # Weak Pull Up
+  sensor8: D8
   # GPIO15, RTS0, HCS
   # Restricted if low on boot
   # Weak Pull Up
-  sensor8: D8
-  # GPIO16, wake
-  # Has pull-down (but no pull-up) resistor
-  # Weak Pull Down
-  sensor9: D0
 
   # INPUT ONLY PINS
-  # GPIO3, RX, RXD0
-  input1: D9
+  input1: A0
   # A0, ADC0
   # Analog input only
-  input2: A0
 
   # I2C
-  # GPIO9, SDD2
-  # sdapin: GPIO9
-  # GPIO10, SDD3
-  # sclpin: GPIO10
+  sdapin: $sensor2
+  sclpin: $sensor1
 
 packages:
   remote_package:
