@@ -14,7 +14,7 @@ substitutions:
   
   # LED CONTROL
   status_led: $sensor4
-  # D0, GPIO2, TXD1
+  # D4, GPIO2, TXD1
   # Output only
   # Restricted if high on boot
   # Weak Pull Up
