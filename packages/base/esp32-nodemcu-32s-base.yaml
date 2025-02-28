@@ -13,92 +13,91 @@ substitutions:
   # PIN MAPPING
   
   # LED CONTROL
-  # Pulled LOW, RTC, Analog, TOUCH
   status_led: GPIO2
+  # Pulled LOW, RTC, Analog, TOUCH
 
   # BUZZER
+  buzzer1: GPIO0
   # Pulled HIGH. Connected to BOOT Button, can use as output
   # RTC, Analog
-  buzzer1: GPIO0
 
   # GENERAL PURPOSE GPIO
-  # UART0_TXD
   sensor1: GPIO1
+  # UART0_TXD
+  sensor3: GPIO3
   # UART0_RXD
-  sensor2: GPIO3
+  sensor4: GPIO4
   # Pulled LOW
   # RTC, Analog, TOUCH
-  sensor3: GPIO4
+  sensor5: GPIO5
   # CAN'T USE WHEN USING SPI0
   # Pulled HIGH
   # VSPI_CS0
-  sensor4: GPIO5
+  sensor12: GPIO12
   # CAN'T USE WHEN USING SPI1
   # Pulled LOW - Boot fails if pulled HIGH
   # RTC, Analog, TOUCH
   # HSPI_MISO
-  sensor5: GPIO12
+  sensor13: GPIO13
   # CAN'T USE WHEN USING SPI1
   # RTC, Analog, TOUCH
   # HSPI_MOSI
-  sensor6: GPIO13
+  sensor14: GPIO14
   # CAN'T USE WHEN USING SPI1
   # RTC, Analog, TOUCH
   # HSPI_CLK
-  sensor7: GPIO14
+  sensor15: GPIO15
   # CAN'T USE WHEN USING SPI1
   # Pulled HIGH
   # RTC, Analog, TOUCH
   # HSPI_CS0
-  sensor8: GPIO15
+  sensor16: GPIO16
   # UART2_RXD
-  sensor9: GPIO16
+  sensor17: GPIO17
   # UART2_TXD
-  sensor10: GPIO17
+  sensor18: GPIO18
   # CAN'T USE WHEN USING SPI0
   # VSPI_CLK
-  sensor11: GPIO18
+  sensor19: GPIO19
   # CAN'T USE WHEN USING SPI0
   # VSPI_MISO
-  sensor12: GPIO19
+  sensor21: GPIO21
   # I2C SDA
-  sensor13: GPIO21
+  sensor22: GPIO22
   # I2C SCL
-  sensor14: GPIO22
+  sensor23: GPIO23
   # CAN'T USE WHEN USING SPI0
   # VSPI_MOSI
-  sensor15: GPIO23
+  sensor25: GPIO25
   # RTC, Analog, DAC Channel 1
-  sensor16: GPIO25
+  sensor26: GPIO26
   # RTC, Analog, DAC Channel 2
-  sensor17: GPIO26
+  sensor27: GPIO27
   # RTC, Analog, TOUCH
-  sensor18: GPIO27
+  sensor32: GPIO32
   # RTC, Analog, TOUCH
-  sensor19: GPIO32
+  sensor33: GPI033
   # RTC, Analog, TOUCH
-  sensor20: GPI033
 
   # SPI Bus
+  spi_clk0: $sensor18
   # GPI018
-  spi_clk0: $sensor11
+  spi_cs0: $sensor5
   # GPI05
-  spi_cs0: $sensor4
+  spi_mosi0: $sensor23
   # GPI023
-  spi_mosi0: $sensor15
+  spi_miso0: $sensor19
   # GPI019
-  spi_miso0: $sensor12
+  spi_clk1: $sensor14
   # GPI014
-  spi_clk1: $sensor7
+  spi_cs1: $sensor15
   # GPI015
-  spi_cs1: $sensor8
+  spi_mosi1: $sensor13
   # GPI013
-  spi_mosi1: $sensor6
+  spi_miso1: $sensor12
   # GPI012
-  spi_miso1: $sensor5
   
   # INPUT ONLY PINS
-  # RTC, Analog
   input1: GPIO34
   # RTC, Analog
   input2: GPIO35
@@ -106,27 +105,28 @@ substitutions:
   input3: GPIO36
   # RTC, Analog
   input4: GPIO39
+  # RTC, Analog
 
   # INTERNAL - Typically not used
   # Connected to SPI Flash IC
-  # SPICLK/SDCLK
   internal1: GPIO6
-  # SPIQ/SDDATA2
+  # SPICLK/SDCLK
   internal2: GPIO7
-  # SPID/SDDATA1
+  # SPIQ/SDDATA2
   internal3: GPIO8
-  # SPIHD/SDDATA2
+  # SPID/SDDATA1
   internal4: GPIO9
-  # SPIWP/SDDATA3
+  # SPIHD/SDDATA2
   internal5: GPIO10
-  # SPICS0/SDSMD
+  # SPIWP/SDDATA3
   internal6: GPIO11
+  # SPICS0/SDSMD
 
   # I2C
+  sdapin: $sensor21
   # I2C SDA, GPIO21
-  sdapin: $sensor13
+  sclpin: $sensor22
   # I2C SCL, GPIO22
-  sclpin: $sensor14
 
 packages:
   remote_package:
