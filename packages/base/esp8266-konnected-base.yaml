@@ -13,38 +13,37 @@ substitutions:
   # PIN MAPPING
   
   # LED CONTROL
+  status_led: D4
   # GPIO2, TXD1
   # Output only
   # Restricted if high on boot
   # Weak Pull Up
-  status_led: D4
 
-
-  # GPIO5, SCL - Zone 1
   sensor1: D1
-  # GPIO4, SDA - Zone 2
+  # GPIO5, SCL - Zone 1
   sensor2: D2
+  # GPIO4, SDA - Zone 2
+  sensor3: D5
   # GPIO14, HSCLK - Zone 3
   # Weak Pull Up
-  sensor3: D5
+  sensor4: D6
   # GPIO12, HMISO - Zone 4
   # Weak Pull Up
-  sensor4: D6
+  sensor5: D7
   # GPIO13, CTSO, HMOSI- Zone 5
   # Weak Pull Up
-  sensor5: D7
   
   # BUZZER
-  # If using buzzer can't use sensor 5
   buzzer1: $sensor5
+  # If using buzzer can't use sensor 5
 
-  # GPIO3, RX, RXD0 - Zone 6
   input1: D9
+  # GPIO3, RX, RXD0 - Zone 6
 
+  siren: D8
   # GPIO15, RTS0, HCS
   # Restricted if low on boot
   # Weak Pull Up
-  siren: D8
 
 packages:
   remote_package:
