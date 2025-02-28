@@ -23,11 +23,8 @@ substitutions:
   status_led: GPIO2
 
   # BUZZER
-  # Add the below to esphome yaml substitution
   buzzer1: $sensor1
   
-  # If buzzer needed choose a different sensor in esphome yaml substitution
-
   # GENERAL PURPOSE GPIO
   sensor1: GPIO1
   # UART0_TXD
