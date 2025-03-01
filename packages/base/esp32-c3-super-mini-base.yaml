@@ -1,0 +1,68 @@
+substitutions:
+
+  ####
+  # NAME
+  name: esp32-c3-super-mini
+  friendly_name: ESPHome
+  project_name: deep126.esp32-c3-super-mini-esphome-panel
+  project_version: "0.0.1"
+  board: esp32-c3-devkitm-1
+  invert_status_led: "false"
+
+  ####
+  # PIN MAPPING
+  
+  # LED CONTROL
+  status_led: GPIO2
+  # Pulled LOW, RTC, Analog, TOUCH
+
+  # GENERAL PURPOSE GPIO
+  sensor1: GPIO1
+  # A1
+  sensor3: GPIO3
+  # A3
+  sensor4: GPIO4
+  # A4, SCK
+  sensor5: GPIO5
+  # A5, MISO
+  sensor6: GPIO6
+  # MOSI
+  sensor7: GPIO7
+  # SS
+  sensor8: GPIO8
+  # SDA
+  sensor9: GPIO9
+  # SCL
+  sensor10: GPIO10
+  # RX
+  sensor20: GPIO20
+  # RX
+  sensor21: GPIO21
+  # TX
+
+  
+  # SPI Bus
+  spi_sck: $sensor4
+  # GPI04
+  spi_ss: $sensor7
+  # GPI07
+  spi_mosi: $sensor6
+  # GPI06
+  spi_miso: $sensor5
+  # GPI019
+  
+
+  # I2C
+  sdapin: $sensor8
+  # I2C SDA, GPIO8
+  sclpin: $sensor9
+  # I2C SCL, GPIO9
+
+packages:
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files: 
+      - packages/core/esp32-core.yaml
+      - packages/core/default-settings.yaml
