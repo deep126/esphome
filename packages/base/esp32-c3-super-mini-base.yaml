@@ -16,6 +16,9 @@ substitutions:
   status_led: GPIO2
   # Pulled LOW, RTC, Analog, TOUCH
 
+  # BUZZER
+  buzzer1: $sensor1
+
   # GENERAL PURPOSE GPIO
   sensor1: GPIO1
   # A1
