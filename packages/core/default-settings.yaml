@@ -1,8 +1,6 @@
 logger:
   level: INFO
 
-safe_mode:
-
 substitutions:
   ####
   # SETTINGS
