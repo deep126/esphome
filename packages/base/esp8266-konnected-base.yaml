@@ -52,5 +52,4 @@ packages:
     refresh: 5min
     files: 
       - packages/core/esp8266-core.yaml
-      - packages/core/default-settings.yaml
       - packages/core/siren.yaml
