@@ -55,3 +55,4 @@ packages:
     refresh: 5min
     files: 
       - packages/core/esp8266-buzzer.yaml
+      - packages/core/default-settings.yaml
