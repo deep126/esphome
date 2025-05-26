@@ -131,6 +131,5 @@ packages:
     ref: master
     refresh: 5min
     files: 
-      - packages/core/components.yaml
       - packages/core/esp32-core.yaml
       - packages/core/status_led_2.yaml
