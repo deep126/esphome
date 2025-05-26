@@ -1,3 +1,5 @@
+safe_mode:
+
 esphome:
   project:
     name: $project_name
