@@ -1,8 +1,9 @@
 logger:
   level: INFO
 
-substitutions:
+safe_mode:
 
+substitutions:
   ####
   # SETTINGS
   debounce_time: 200ms
