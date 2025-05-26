@@ -17,19 +17,49 @@ substitutions:
   # TOUCH
   # Connect to ground on boot to flash
   # outputs PWM signal at boot, must be LOW to enter flashing mode
+  # GPIO1
+  # UART0_TXD
+  # GPIO3
+  # UART0_RXD
+  # GPIO12
+  # CAN'T USE WHEN USING SPI1
+  # Pulled LOW - Boot fails if pulled HIGH
+  # RTC, Analog, TOUCH
+  # HSPI_MISO
+  # GPIO15
+  # CAN'T USE WHEN USING SPI1
+  # Pulled HIGH
+  # RTC, Analog, TOUCH
+  # HSPI_CS0
+  # Need to solder pins to use
+  # INTERNAL - Typically not used, need to solder pins to use
+  # Connected to SPI Flash IC
+  # internal1: GPIO6
+  # SPICLK/SDCLK
+  # internal2: GPIO7
+  # SPIQ/SDDATA2
+  # internal3: GPIO8
+  # SPID/SDDATA1
+  # internal4: GPIO9
+  # SPIHD/SDDATA2
+  # internal5: GPIO10
+  # SPIWP/SDDATA3
+  # internal6: GPIO11
+  # SPICS0/SDSMD
+
   
   # LED CONTROL
-  # Pulled LOW, RTC, Analog, TOUCH
   status_led: GPIO2
+  # Pulled LOW, RTC, Analog, TOUCH
+  status_led_2: GPI13
+  # CAN'T USE WHEN USING SPI1
+  # RTC, Analog, TOUCH
+  # HSPI_MOSI
 
   # BUZZER
-  buzzer1: $sensor1
+  buzzer1: $sensor17
   
   # GENERAL PURPOSE GPIO
-  sensor1: GPIO1
-  # UART0_TXD
-  sensor3: GPIO3
-  # UART0_RXD
   sensor4: GPIO4
   # Pulled LOW
   # RTC, Analog, TOUCH
@@ -37,25 +67,10 @@ substitutions:
   # CAN'T USE WHEN USING SPI0
   # Pulled HIGH
   # VSPI_CS0
-  sensor12: GPIO12
-  # CAN'T USE WHEN USING SPI1
-  # Pulled LOW - Boot fails if pulled HIGH
-  # RTC, Analog, TOUCH
-  # HSPI_MISO
-  sensor13: GPIO13
-  # CAN'T USE WHEN USING SPI1
-  # RTC, Analog, TOUCH
-  # HSPI_MOSI
   sensor14: GPIO14
   # CAN'T USE WHEN USING SPI1
   # RTC, Analog, TOUCH
   # HSPI_CLK
-  sensor15: GPIO15
-  # CAN'T USE WHEN USING SPI1
-  # Pulled HIGH
-  # RTC, Analog, TOUCH
-  # HSPI_CS0
-  # Need to solder pins to use
   sensor16: GPIO16
   # UART2_RXD
   sensor17: GPIO17
@@ -106,20 +121,6 @@ substitutions:
   input4: GPIO39
   # RTC, Analog, Digital
 
-  # INTERNAL - Typically not used, need to solder pins to use
-  # Connected to SPI Flash IC
-  internal1: GPIO6
-  # SPICLK/SDCLK
-  internal2: GPIO7
-  # SPIQ/SDDATA2
-  internal3: GPIO8
-  # SPID/SDDATA1
-  internal4: GPIO9
-  # SPIHD/SDDATA2
-  internal5: GPIO10
-  # SPIWP/SDDATA3
-  internal6: GPIO11
-  # SPICS0/SDSMD
 
   # I2C
   sdapin: $sensor21
