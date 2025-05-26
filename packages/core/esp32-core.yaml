@@ -56,6 +56,5 @@ packages:
     ref: master
     refresh: 5min
     files: 
-      - packages/core/components.yaml
       - packages/core/default-settings.yaml
       - packages/core/esp32-buzzer.yaml
