@@ -1,7 +1,6 @@
 substitutions:
 
-  ####
-  # NAME
+  #### BOARD METADATA ####
   name: espduino-32
   friendly_name: ESPHome
   project_name: deep126.esp32-esp32doit-espduino-esphome-panel
@@ -9,10 +8,9 @@ substitutions:
   board: esp32doit-espduino
   invert_status_led: "false"
 
-  ####
-  # PIN MAPPING
-
-  # UNUSED
+  #### PIN MAPPING ####
+  
+  #### UNUSED
   # GPIO0:
   # TOUCH
   # Connect to ground on boot to flash
@@ -47,19 +45,19 @@ substitutions:
   # internal6: GPIO11
   # SPICS0/SDSMD
 
-  
-  # LED CONTROL
+  #### LED ASSIGNMENT
   status_led: GPIO2
   # Pulled LOW, RTC, Analog, TOUCH
-  status_led_2: GPI13
+  status_led_2: GPIO13
   # CAN'T USE WHEN USING SPI1
   # RTC, Analog, TOUCH
   # HSPI_MOSI
 
-  # BUZZER
-  buzzer1: $sensor17
+  #### BUZZER ASSIGNMENT
+  buzzer1: GPIO17
+  # UART2_TXD
   
-  # GENERAL PURPOSE GPIO
+  #### GENERAL PURPOSE GPIO
   sensor4: GPIO4
   # Pulled LOW
   # RTC, Analog, TOUCH
@@ -73,8 +71,6 @@ substitutions:
   # HSPI_CLK
   sensor16: GPIO16
   # UART2_RXD
-  sensor17: GPIO17
-  # UART2_TXD
   sensor18: GPIO18
   # CAN'T USE WHEN USING SPI0
   # VSPI_CLK
@@ -97,21 +93,21 @@ substitutions:
   sensor32: GPIO32
   # RTC, Analog, TOUCH
   # Need to solder pins to use
-  sensor33: GPI033
+  sensor33: GPIO33
   # RTC, Analog, TOUCH
   # Need to solder pins to use
 
-  # SPI Bus
+  #### SPI PINOUT (note: not active)
   spi_clk0: $sensor18
   spi_cs0: $sensor5
   spi_mosi0: $sensor23
   spi_miso0: $sensor19
   spi_clk1: $sensor14
-  spi_cs1: $sensor15
-  spi_mosi1: $sensor13
-  spi_miso1: $sensor12
+  spi_cs1: GPIO15
+  spi_mosi1: GPIO13
+  spi_miso1: GPIO12
   
-  # INPUT ONLY PINS
+  #### INPUT ONLY PINS
   input1: GPIO34
   # RTC, Analog, Digital
   input2: GPIO35
@@ -122,12 +118,13 @@ substitutions:
   # RTC, Analog, Digital
 
 
-  # I2C
+  #### I2C PINOUT
   sdapin: $sensor21
   # I2C SDA, GPIO21
   sclpin: $sensor22
   # I2C SCL, GPIO22
 
+#### ADDITIONAL PACKAGES
 packages:
   remote_package:
     url: http://github.com/deep126/esphome
