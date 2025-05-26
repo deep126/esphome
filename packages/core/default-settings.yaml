@@ -1,6 +1,3 @@
-logger:
-  level: INFO
-
 substitutions:
   ####
   # SETTINGS
