@@ -5,3 +5,10 @@ light:
     pin:
       number: $status_led_2
       inverted: $invert_status_led
+
+script:
+  - id: blink_status_led_2
+    then:
+      - light.toggle: status_led_light
+      - delay: 100ms
+      - light.toggle: status_led_light
