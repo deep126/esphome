@@ -1,5 +1,10 @@
 safe_mode:
 
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret encryption_key
+
 esphome:
   project:
     name: $project_name
