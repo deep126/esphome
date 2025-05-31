@@ -1,20 +1,5 @@
 substitutions:
   buzzer_platform: esp8266_pwm
-  
-esphome:
-  project:
-    name: $project_name
-    version: $project_version
-  on_boot:
-    priority: 600.0
-    then:
-      - text_sensor.template.publish:
-          id: device_id
-          state: !lambda 'return get_mac_address();'
-      - wait_until:
-          api.connected:
-      - logger.log: API is connected!
-      - rtttl.play: $success_beep
 
 esp8266:
   board: ${board}
