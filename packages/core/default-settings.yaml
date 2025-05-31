@@ -1,3 +1,8 @@
+substitutions:
+  #### SETTINGS
+  debounce_time: 200ms
+  delayed_off_time: 5s
+
 # Enable Home Assistant API
 api:
   encryption:
@@ -7,11 +12,6 @@ safe_mode:
 
 logger:
   level: INFO
-
-substitutions:
-  #### SETTINGS
-  debounce_time: 200ms
-  delayed_off_time: 5s
 
   #### STATUS LED
 globals:
