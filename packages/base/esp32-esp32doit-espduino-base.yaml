@@ -131,4 +131,3 @@ packages:
     refresh: 5min
     files: 
       - packages/core/esp32-core.yaml
-      - packages/core/status_led_2.yaml
