@@ -13,6 +13,14 @@ substitutions:
   mosiac_2: 'Mosaic:d=8,o=6,b=400:c,e,g,e,c,g,e,g,c,g,c,e,c,g,e,g,e,c,p,c5,e5,g5,e5,c5,g5,e5,g5,c5,g5,c5,e5,c5,g5,e5,g5,e5,c5'
   success_beep: 'success:d=24,o=5,b=100:c,g,b'
 
+output:
+  - platform: $buzzer_platform
+    pin: $buzzer1
+    id: rtttl_out
+
+rtttl:
+  output: rtttl_out
+
 button:  
   - platform: template
     id: warning_tone
@@ -21,7 +29,6 @@ button:
     on_press:
       then:
         - rtttl.play: $ominous_warning
-
   - platform: template
     id: star_wars_tone
     name: "Play Star Wars"
@@ -29,7 +36,6 @@ button:
     on_press:
       then:
         - rtttl.play: $star_wars
-
   - platform: template
     id: mario_tone
     name: "Play Mario"
@@ -37,7 +43,6 @@ button:
     on_press:
       then:
         - rtttl.play: $mario
-
   - platform: template
     id: mi_tone
     name: "Play Mission Impossible"
