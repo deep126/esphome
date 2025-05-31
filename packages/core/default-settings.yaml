@@ -88,15 +88,6 @@ script:
             - delay: 100ms
             - light.toggle: status_led_light
 
-  #### BUZZER
-output:
-  - platform: $buzzer_platform
-    pin: $buzzer1
-    id: rtttl_out
-
-rtttl:
-  output: rtttl_out
-
 packages:
   remote_package:
     url: http://github.com/deep126/esphome
