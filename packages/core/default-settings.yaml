@@ -49,13 +49,14 @@ text_sensor:
     hide_timestamp: true
     name: "ESPHome Version"
     entity_category: diagnostic
-  - platform: template
-    name: "Last Reset Reason"
-    lambda: |-
-      return ESP.getResetReason();
-    update_interval: 60s
-    entity_category: diagnostic
-    
+  - platform: debug
+    device:
+      name: "Device Info"
+      entity_category: diagnostic
+    reset_reason:
+      name: "Reset Reason"
+      entity_category: diagnostic
+      
 button:
   - platform: restart
     name: "Restart"
