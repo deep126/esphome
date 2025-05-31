@@ -27,5 +27,4 @@ packages:
     refresh: 5min
     files: 
       - packages/core/default-settings.yaml
-      - packages/core/components.yaml
       - packages/core/esp32-buzzer.yaml
