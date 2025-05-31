@@ -29,11 +29,6 @@ binary_sensor:
     entity_category: diagnostic
     device_class: problem
     
-sensor:
-  - platform: uptime
-    name: "Uptime"
-    entity_category: diagnostic
-
 text_sensor:
   - platform: template
     name: "Device ID"
