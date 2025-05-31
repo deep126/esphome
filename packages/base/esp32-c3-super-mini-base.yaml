@@ -1,7 +1,6 @@
 substitutions:
 
-  ####
-  # NAME
+  #### BOARD METADATA ####
   name: esp32-c3-super-mini
   friendly_name: ESPHome
   project_name: deep126.esp32-c3-super-mini-esphome-panel
@@ -9,17 +8,16 @@ substitutions:
   board: esp32-c3-devkitm-1
   invert_status_led: "false"
 
-  ####
-  # PIN MAPPING
+  #### PIN MAPPING ####
   
-  # LED CONTROL
-  status_led: GPIO2
+  #### LED ASSIGNMENT
+  status_led_1: GPIO2
   # Pulled LOW, RTC, Analog, TOUCH
 
-  # BUZZER
+  #### BUZZER ASSIGNMENT
   buzzer1: $sensor1
 
-  # GENERAL PURPOSE GPIO
+  #### GENERAL PURPOSE GPIO
   sensor1: GPIO1
   # A1
   sensor3: GPIO3
@@ -44,7 +42,7 @@ substitutions:
   # TX
 
   
-  # SPI Bus
+  #### SPI PINOUT 
   spi_sck: $sensor4
   # GPI04
   spi_ss: $sensor7
@@ -55,12 +53,13 @@ substitutions:
   # GPI019
   
 
-  # I2C
+  #### I2C PINOUT
   sdapin: $sensor8
   # I2C SDA, GPIO8
   sclpin: $sensor9
   # I2C SCL, GPIO9
 
+#### ADDITIONAL PACKAGES
 packages:
   remote_package:
     url: http://github.com/deep126/esphome
