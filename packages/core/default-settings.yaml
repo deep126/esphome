@@ -21,7 +21,6 @@ binary_sensor:
     name: "Low Memory Warning"
     lambda: |-
       return ESP.getFreeHeap() < 120000;
-    update_interval: 60s
     entity_category: diagnostic
     device_class: problem
     
@@ -75,7 +74,7 @@ light:
     name: "Status LED Light"
     id: status_led_light
     pin:
-      number: $status_led
+      number: $status_led_1
       inverted: $invert_status_led
 
 script:
