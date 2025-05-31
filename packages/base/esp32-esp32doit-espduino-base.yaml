@@ -2,11 +2,9 @@ substitutions:
 
   #### BOARD METADATA ####
   name: espduino-32
-  friendly_name: ESPHome
   project_name: deep126.esp32-esp32doit-espduino-esphome-panel
   project_version: "25.5.31"
   board: esp32doit-espduino
-  invert_status_led: "false"
 
   #### PIN MAPPING ####
   
@@ -50,6 +48,7 @@ substitutions:
   # SPICS0/SDSMD
 
   #### LED ASSIGNMENT
+  invert_status_led: "false"
   status_led_1: GPIO2
   # Pulled LOW, RTC, Analog, TOUCH
 
