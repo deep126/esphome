@@ -56,7 +56,14 @@ text_sensor:
     reset_reason:
       name: "Reset Reason"
       entity_category: diagnostic
-      
+
+sensor:
+  - platform: debug
+    loop_time:
+      name: "Loop Time"
+    cpu_frequency:
+      name: "CPU Frequency"
+
 button:
   - platform: restart
     name: "Restart"
