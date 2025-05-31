@@ -27,7 +27,7 @@ substitutions:
   # SPICS0/SDSMD
   
   #### LED ASSIGNMENT
-  status_led: GPIO2
+  status_led_1: GPIO2
   # Pulled LOW, RTC, Analog, TOUCH
 
   #### BUZZER ASSIGNMENT
