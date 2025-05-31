@@ -2,15 +2,14 @@ substitutions:
 
   #### BOARD METADATA ####
   name: esp32-c3-super-mini
-  friendly_name: ESPHome
   project_name: deep126.esp32-c3-super-mini-esphome-panel
   project_version: "25.5.31"
   board: esp32-c3-devkitm-1
-  invert_status_led: "false"
 
   #### PIN MAPPING ####
   
   #### LED ASSIGNMENT
+  invert_status_led: "false"
   status_led_1: GPIO2
   # Pulled LOW, RTC, Analog, TOUCH
 
