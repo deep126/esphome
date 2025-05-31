@@ -1,7 +1,6 @@
 substitutions:
 
-  ####
-  # NAME
+  #### BOARD METADATA ####
   name: nodemcu-32s
   friendly_name: ESPHome
   project_name: deep126.esp32-nodemcu-32s-esphome-panel
@@ -9,19 +8,34 @@ substitutions:
   board: nodemcu-32s
   invert_status_led: "false"
 
-  ####
-  # PIN MAPPING
+  #### PIN MAPPING ####
+
+  #### UNUSED
+  # INTERNAL - Typically not used, need to solder pins to use
+  # Connected to SPI Flash IC
+  # internal1: GPIO6
+  # SPICLK/SDCLK
+  # internal2: GPIO7
+  # SPIQ/SDDATA2
+  # internal3: GPIO8
+  # SPID/SDDATA1
+  # internal4: GPIO9
+  # SPIHD/SDDATA2
+  # internal5: GPIO10
+  # SPIWP/SDDATA3
+  # internal6: GPIO11
+  # SPICS0/SDSMD
   
-  # LED CONTROL
+  #### LED ASSIGNMENT
   status_led: GPIO2
   # Pulled LOW, RTC, Analog, TOUCH
 
-  # BUZZER
+  #### BUZZER ASSIGNMENT
   buzzer1: GPIO0
   # Pulled HIGH. Connected to BOOT Button, can use as output
   # RTC, Analog
 
-  # GENERAL PURPOSE GPIO
+  #### GENERAL PURPOSE GPIO
   sensor1: GPIO1
   # UART0_TXD
   sensor3: GPIO3
@@ -79,7 +93,7 @@ substitutions:
   sensor33: GPI033
   # RTC, Analog, TOUCH
 
-  # SPI Bus
+  #### SPI PINOUT 
   spi_clk0: $sensor18
   # GPI018
   spi_cs0: $sensor5
@@ -97,7 +111,7 @@ substitutions:
   spi_miso1: $sensor12
   # GPI012
   
-  # INPUT ONLY PINS
+  #### INPUT ONLY PINS
   input1: GPIO34
   # RTC, Analog
   input2: GPIO35
@@ -107,27 +121,13 @@ substitutions:
   input4: GPIO39
   # RTC, Analog
 
-  # INTERNAL - Typically not used
-  # Connected to SPI Flash IC
-  internal1: GPIO6
-  # SPICLK/SDCLK
-  internal2: GPIO7
-  # SPIQ/SDDATA2
-  internal3: GPIO8
-  # SPID/SDDATA1
-  internal4: GPIO9
-  # SPIHD/SDDATA2
-  internal5: GPIO10
-  # SPIWP/SDDATA3
-  internal6: GPIO11
-  # SPICS0/SDSMD
-
-  # I2C
+  #### I2C PINOUT
   sdapin: $sensor21
   # I2C SDA, GPIO21
   sclpin: $sensor22
   # I2C SCL, GPIO22
 
+#### ADDITIONAL PACKAGES
 packages:
   remote_package:
     url: http://github.com/deep126/esphome
