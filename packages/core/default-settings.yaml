@@ -1,9 +1,12 @@
-safe_mode:
-
 # Enable Home Assistant API
 api:
   encryption:
     key: !secret encryption_key
+
+safe_mode:
+
+logger:
+  level: INFO
 
 substitutions:
   #### SETTINGS
