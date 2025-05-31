@@ -1,29 +1,26 @@
 substitutions:
 
-  ####
-  # NAME
+  #### BOARD METADATA ####
   name: nodemcuv2
-  friendly_name: ESPHome
   project_name: deep126.esp8266-nodemcuv2-esphome-panel
-  project_version: "0.0.1"
+  project_version: "25.5.31"
   board: nodemcuv2
-  invert_status_led: "true"
 
-  ####
-  # PIN MAPPING
+  #### PIN MAPPING ####
   
-  # LED CONTROL
-  status_led: $sensor4
+  #### LED ASSIGNMENT
+  invert_status_led: "true"
+  status_led_1: $sensor4
   # D4, GPIO2, TXD1
   # Output only
   # Restricted if high on boot
   # Weak Pull Up
   
-  # BUZZER
+  #### BUZZER ASSIGNMENT
   buzzer1: GPIO1
   # GPIO1, TX, TXD0
 
-  # GENERAL PURPOSE GPIO
+  #### GENERAL PURPOSE GPIO
   sensor0: D0
   # GPIO16, Wake
   # Has pull-down (but no pull-up) resistor
@@ -55,15 +52,16 @@ substitutions:
   # Restricted if low on boot
   # Weak Pull Up
 
-  # INPUT ONLY PINS
+  #### INPUT ONLY PINS
   input1: A0
   # A0, ADC0
   # Analog input only
 
-  # I2C
+  #### I2C PINOUT
   sdapin: $sensor2
   sclpin: $sensor1
 
+#### ADDITIONAL PACKAGES
 packages:
   remote_package:
     url: http://github.com/deep126/esphome
