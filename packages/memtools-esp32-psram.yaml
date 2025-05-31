@@ -1,0 +1,8 @@
+sensor:
+  - platform: debug
+    free:
+      name: "Heap Free"
+    block:
+      name: "Heap Max Block"
+    psram:
+      name: "Free PSRAM"
