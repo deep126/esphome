@@ -1,8 +1,3 @@
-# Enable Home Assistant API
-api:
-  encryption:
-    key: !secret encryption_key
-
 esphome:
   project:
     name: $project_name
@@ -21,41 +16,16 @@ esphome:
 esp32:
   board: ${board}
 
-binary_sensor:
-  - platform: status
-    name: "Status"
-    entity_category: diagnostic
-
 sensor:
-  - platform: uptime
-    name: "Uptime"
-    entity_category: diagnostic
-
-text_sensor:
-  - platform: template
-    name: "Device ID"
-    id: device_id
-    entity_category: diagnostic
-    update_interval: never
-  - platform: version
-    name: "ESPHome Version"
-    hide_timestamp: true
-    entity_category: diagnostic
-
-button:
-  - platform: restart
-    name: "Restart"
-    entity_category: config
-  - platform: safe_mode
-    name: "Restart (Safe Mode)"
-    entity_category: config
-
+  - platform: esp32_hall
+    name: "ESP32 Hall Sensor" # optional but fun
+    
 packages:
   remote_package:
     url: http://github.com/deep126/esphome
     ref: master
     refresh: 5min
     files: 
-      - packages/core/components.yaml
       - packages/core/default-settings.yaml
+      - packages/core/components.yaml
       - packages/core/esp32-buzzer.yaml
