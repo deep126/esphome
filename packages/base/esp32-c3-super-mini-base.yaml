@@ -4,7 +4,7 @@ substitutions:
   name: esp32-c3-super-mini
   friendly_name: ESPHome
   project_name: deep126.esp32-c3-super-mini-esphome-panel
-  project_version: "0.0.1"
+  project_version: "25.5.31"
   board: esp32-c3-devkitm-1
   invert_status_led: "false"
 
