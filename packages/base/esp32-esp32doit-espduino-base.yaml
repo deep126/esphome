@@ -24,6 +24,10 @@ substitutions:
   # Pulled LOW - Boot fails if pulled HIGH
   # RTC, Analog, TOUCH
   # HSPI_MISO
+  # GPIO13
+  # CAN'T USE WHEN USING SPI1
+  # RTC, Analog, TOUCH
+  # HSPI_MOSI
   # GPIO15
   # CAN'T USE WHEN USING SPI1
   # Pulled HIGH
@@ -46,12 +50,8 @@ substitutions:
   # SPICS0/SDSMD
 
   #### LED ASSIGNMENT
-  status_led: GPIO2
+  status_led_1: GPIO2
   # Pulled LOW, RTC, Analog, TOUCH
-  status_led_2: GPIO13
-  # CAN'T USE WHEN USING SPI1
-  # RTC, Analog, TOUCH
-  # HSPI_MOSI
 
   #### BUZZER ASSIGNMENT
   buzzer1: GPIO17
