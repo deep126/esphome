@@ -2,11 +2,9 @@ substitutions:
 
   #### BOARD METADATA ####
   name: nodemcu-32s
-  friendly_name: ESPHome
   project_name: deep126.esp32-nodemcu-32s-esphome-panel
   project_version: "25.5.31"
   board: nodemcu-32s
-  invert_status_led: "false"
 
   #### PIN MAPPING ####
 
@@ -27,6 +25,7 @@ substitutions:
   # SPICS0/SDSMD
   
   #### LED ASSIGNMENT
+  invert_status_led: "false"
   status_led_1: GPIO2
   # Pulled LOW, RTC, Analog, TOUCH
 
