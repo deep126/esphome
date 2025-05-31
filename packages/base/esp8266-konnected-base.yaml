@@ -6,11 +6,11 @@ substitutions:
   project_name: deep126.esp8266-konnected-esphome-panel
   project_version: "25.5.31"
   board: nodemcuv2
-  invert_status_led: "true"
 
   #### PIN MAPPING ####
   
   #### LED ASSIGNMENT
+  invert_status_led: "true"
   status_led_1: D4
   # GPIO2, TXD1
   # Output only
