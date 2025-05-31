@@ -25,6 +25,9 @@ api:
 
 safe_mode:
 
+debug:
+  update_interval: 30s
+  
 logger:
   level: INFO
 
