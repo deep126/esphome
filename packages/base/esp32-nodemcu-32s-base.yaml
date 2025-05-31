@@ -4,7 +4,7 @@ substitutions:
   name: nodemcu-32s
   friendly_name: ESPHome
   project_name: deep126.esp32-nodemcu-32s-esphome-panel
-  project_version: "0.0.1"
+  project_version: "25.5.31"
   board: nodemcu-32s
   invert_status_led: "false"
 
