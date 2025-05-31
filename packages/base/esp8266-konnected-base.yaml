@@ -2,7 +2,6 @@ substitutions:
 
   #### BOARD METADATA ####
   name: konnected-esp8266
-  friendly_name: Konnected Panel
   project_name: deep126.esp8266-konnected-esphome-panel
   project_version: "25.5.31"
   board: nodemcuv2
