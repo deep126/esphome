@@ -1,3 +1,6 @@
+substitutions:
+  buzzer_platform: ledc
+  
 esphome:
   project:
     name: $project_name
