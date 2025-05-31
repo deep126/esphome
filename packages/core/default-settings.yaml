@@ -6,13 +6,11 @@ api:
     key: !secret encryption_key
 
 substitutions:
-  ####
-  # SETTINGS
+  #### SETTINGS
   debounce_time: 200ms
   delayed_off_time: 5s
 
-  ####
-  # STATUS LED
+  #### STATUS LED
 globals:
   - id: blink_on_state
     type: bool
@@ -23,7 +21,14 @@ binary_sensor:
   - platform: status
     name: "Status"
     entity_category: diagnostic
-
+  - platform: template
+    name: "Low Memory Warning"
+    lambda: |-
+      return ESP.getFreeHeap() < 120000;
+    update_interval: 60s
+    entity_category: diagnostic
+    device_class: problem
+    
 sensor:
   - platform: uptime
     name: "Uptime"
@@ -39,7 +44,13 @@ text_sensor:
     hide_timestamp: true
     name: "ESPHome Version"
     entity_category: diagnostic
-
+  - platform: template
+    name: "Last Reset Reason"
+    lambda: |-
+      return ESP.getResetReason();
+    update_interval: 60s
+    entity_category: diagnostic
+    
 button:
   - platform: restart
     name: "Restart"
