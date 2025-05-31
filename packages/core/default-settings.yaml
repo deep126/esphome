@@ -13,13 +13,6 @@ safe_mode:
 logger:
   level: INFO
 
-  #### STATUS LED
-globals:
-  - id: blink_on_state
-    type: bool
-    restore_value: no
-    initial_value: "true"
-
 binary_sensor:
   - platform: status
     name: "Status"
@@ -57,6 +50,13 @@ button:
     name: "Restart (Safe Mode)"
     entity_category: config
 
+  #### STATUS LED
+globals:
+  - id: blink_on_state
+    type: bool
+    restore_value: no
+    initial_value: "true"
+
 switch:
   - platform: template
     name: "Blink On State Status"
@@ -89,6 +89,15 @@ script:
             - delay: 100ms
             - light.toggle: status_led_light
 
+  #### BUZZER
+output:
+  - platform: $buzzer_platform
+    pin: $buzzer1
+    id: rtttl_out
+
+rtttl:
+  output: rtttl_out
+
 packages:
   remote_package:
     url: http://github.com/deep126/esphome
@@ -96,3 +105,4 @@ packages:
     refresh: 5min
     files: 
       - packages/core/connectivity.yaml
+      - packages/core/buzzer-sounds.yaml
