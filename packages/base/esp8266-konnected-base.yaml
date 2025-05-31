@@ -1,24 +1,31 @@
 substitutions:
 
-  ####
-  # NAME
+  #### BOARD METADATA ####
   name: konnected-esp8266
   friendly_name: Konnected Panel
   project_name: deep126.esp8266-konnected-esphome-panel
-  project_version: "0.0.1"
+  project_version: "25.5.31"
   board: nodemcuv2
   invert_status_led: "true"
 
-  ####
-  # PIN MAPPING
+  #### PIN MAPPING ####
   
-  # LED CONTROL
-  status_led: D4
+  #### LED ASSIGNMENT
+  status_led_1: D4
   # GPIO2, TXD1
   # Output only
   # Restricted if high on boot
   # Weak Pull Up
 
+  #### BUZZER ASSIGNMENT
+  buzzer1: $sensor5
+  # If using buzzer can't use sensor 5
+  siren: D8
+  # GPIO15, RTS0, HCS
+  # Restricted if low on boot
+  # Weak Pull Up
+
+  #### GENERAL PURPOSE GPIO
   sensor1: D1
   # GPIO5, SCL - Zone 1
   sensor2: D2
@@ -33,18 +40,11 @@ substitutions:
   # GPIO13, CTSO, HMOSI- Zone 5
   # Weak Pull Up
   
-  # BUZZER
-  buzzer1: $sensor5
-  # If using buzzer can't use sensor 5
-
+  #### INPUT ONLY PINS
   input1: D9
   # GPIO3, RX, RXD0 - Zone 6
 
-  siren: D8
-  # GPIO15, RTS0, HCS
-  # Restricted if low on boot
-  # Weak Pull Up
-
+#### ADDITIONAL PACKAGES
 packages:
   remote_package:
     url: http://github.com/deep126/esphome
