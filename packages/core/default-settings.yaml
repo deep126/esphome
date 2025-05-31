@@ -104,4 +104,4 @@ packages:
     refresh: 5min
     files: 
       - packages/core/connectivity.yaml
-      - packages/core/buzzer-sounds.yaml
+      - packages/core/buzzer.yaml
