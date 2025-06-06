@@ -42,4 +42,4 @@ packages:
     ref: master
     refresh: 5min
     files: 
-      - packages/core/esp8266-core.yaml
+      - packages/core/esp8266-core-lite.yaml
