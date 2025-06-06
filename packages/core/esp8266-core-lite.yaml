@@ -1,0 +1,128 @@
+substitutions:
+  #### SETTINGS
+  debounce_time: 200ms
+  delayed_off_time: 5s
+
+esp8266:
+  board: ${board}
+  restore_from_flash: True
+
+esphome:
+  project:
+    name: $project_name
+    version: $project_version
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret encryption_key
+
+safe_mode:
+
+debug:
+  update_interval: 30s
+  
+logger:
+  level: WARN
+
+binary_sensor:
+  - platform: template
+    name: "Low Memory Warning"
+    lambda: |-
+      return ESP.getFreeHeap() < 120000;
+    entity_category: diagnostic
+    device_class: problem
+
+text_sensor:
+  - platform: version
+    hide_timestamp: true
+    name: "ESPHome Version"
+    entity_category: diagnostic
+  - platform: wifi_info
+    ip_address:
+      name: "IP Address"
+      entity_category: diagnostic
+
+button:
+  - platform: restart
+    name: "Restart"
+    entity_category: config
+  - platform: safe_mode
+    name: "Restart (Safe Mode)"
+    entity_category: config
+
+  #### STATUS LED
+globals:
+  - id: blink_on_state
+    type: bool
+    restore_value: no
+    initial_value: "true"
+
+switch:
+  - platform: template
+    name: "Blink On State Status"
+    restore_mode: ALWAYS_ON
+    lambda: |-
+      return id(blink_on_state);
+    turn_on_action:
+      - lambda: |-
+          id(blink_on_state) = true;
+    turn_off_action:
+      - lambda: |-
+          id(blink_on_state) = false;
+          
+light:
+  - platform: status_led
+    name: "Status LED Light"
+    id: status_led_light
+    pin:
+      number: $status_led_1
+      inverted: $invert_status_led
+
+script:
+  - id: blink_status_led
+    then:
+      - if:
+          condition:
+            lambda: return id(blink_on_state);
+          then:
+            - light.toggle: status_led_light
+            - delay: 100ms
+            - light.toggle: status_led_light
+
+web_server:
+  include_internal: true
+
+ota:
+  platform: esphome
+  password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: ${area}_${device_name}
+    password: !secret ap_password
+
+captive_portal:
+
+sensor:
+  - platform: copy
+    source_id: wifi_signal_db
+    id: wifi_signal_pct
+    name: "WiFi Signal %"
+    filters:
+      - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
+    unit_of_measurement: "%"
+    entity_category: diagnostic
+  - platform: uptime
+    name: "Uptime"
+    entity_category: diagnostic
+  - platform: debug
+    free:
+      name: "Heap Free"
+    fragmentation:
+      name: "Heap Fragmentation"
+    block:
+      name: "Heap Max Block"
