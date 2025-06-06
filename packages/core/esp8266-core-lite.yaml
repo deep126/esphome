@@ -20,7 +20,7 @@ api:
 safe_mode:
 
 debug:
-  update_interval: 30s
+  update_interval: 60s
   
 logger:
   level: WARN
@@ -108,14 +108,6 @@ wifi:
 captive_portal:
 
 sensor:
-  - platform: copy
-    source_id: wifi_signal_db
-    id: wifi_signal_pct
-    name: "WiFi Signal %"
-    filters:
-      - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
-    unit_of_measurement: "%"
-    entity_category: diagnostic
   - platform: uptime
     name: "Uptime"
     entity_category: diagnostic
