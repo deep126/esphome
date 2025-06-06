@@ -29,7 +29,7 @@ binary_sensor:
   - platform: template
     name: "Low Memory Warning"
     lambda: |-
-      return ESP.getFreeHeap() < 120000;
+      return ESP.getFreeHeap() < 24000;
     entity_category: diagnostic
     device_class: problem
 
