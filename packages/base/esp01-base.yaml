@@ -11,10 +11,6 @@ substitutions:
   #### LED ASSIGNMENT
   invert_status_led: "true"
   status_led_1: $sensor1
-  # GPIO2, TXD1
-  # Output only
-  # Restricted if high on boot
-  # Weak Pull Up
   
   #### GENERAL PURPOSE GPIO
   sensor0: GPIO0
