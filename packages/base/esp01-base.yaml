@@ -10,22 +10,20 @@ substitutions:
   
   #### LED ASSIGNMENT
   invert_status_led: "true"
-  status_led_1: $sensor2
+  status_led_1: $sensor1
   # GPIO2, TXD1
   # Output only
   # Restricted if high on boot
   # Weak Pull Up
   
-  #### BUZZER ASSIGNMENT
-  buzzer1: GPIO1
-  # GPIO1, TX, TXD0
-
   #### GENERAL PURPOSE GPIO
   sensor0: GPIO0
   # GPIO0, FLASH
   # Output only
   # Restricted if high on boot
   # Weak Pull Up
+  sensor1: GPIO1
+  # GPIO1, TX, TXD0
   sensor2: GPIO2
   # GPIO2
   # Output only
