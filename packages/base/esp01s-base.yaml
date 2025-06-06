@@ -1,0 +1,43 @@
+substitutions:
+
+  #### BOARD METADATA ####
+  name: esp01s
+  project_name: deep126.esp01s-esphome-panel
+  project_version: "25.6.5"
+  board: esp01_1m
+
+  #### PIN MAPPING ####
+  
+  #### LED ASSIGNMENT
+  invert_status_led: "true"
+  status_led_1: $sensor2
+  # GPIO2, TXD1
+  # Output only
+  # Restricted if high on boot
+  # Weak Pull Up
+  
+  #### GENERAL PURPOSE GPIO
+  sensor0: GPIO0
+  # GPIO0, FLASH
+  # Output only
+  # Restricted if high on boot
+  # Weak Pull Up
+  sensor1: GPIO1
+  # GPIO1, TX, TXD0
+  sensor2: GPIO2
+  # GPIO2
+  # Output only
+  # Restricted if high on boot
+  # Weak Pull Up
+  sensor3: GPIO3
+  # GPIO3, RX
+  # Input only
+  
+#### ADDITIONAL PACKAGES
+packages:
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files: 
+      - packages/core/esp8266-core-lite.yaml
