@@ -3,7 +3,7 @@ light:
     chipset: WS2812
     pin: $rgb_status_led
     num_leds: $rgb_status_led_length
-    rgb_order: GRB
+    rgb_order: $rgb_status_led_order
     name: "RGB Status LED"
     id: rgb_status_led
     restore_mode: ALWAYS_OFF
