@@ -29,6 +29,7 @@ substitutions:
   # RTC, Analog, TOUCH
   rgb_status_led: $sensor48
   rgb_status_led_length: 1
+  rgb_status_led_order: GRB
 
   #### BUZZER ASSIGNMENT
   buzzer1: $sensor21
