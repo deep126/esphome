@@ -3,12 +3,18 @@ substitutions:
   #### BOARD METADATA ####
   name: esp32-s3-wroom-1
   project_name: deep126.esp32-s3-wroom-1-esphome-panel
-  project_version: "25.5.31"
+  project_version: "25.7.3"
   board: esp32-s3-devkitc-1
 
   #### PIN MAPPING ####
-  #### UNUSED ####
-  # SPI Flash and PSRAM - Do not use these GPIOs
+  
+  #### UNUSED
+  ## STRAP
+  # GPIO0 - RTC, STRAP (BOOT), Must be LOW at boot to enter download mode
+  # GPIO3 - RTC, Analog, TOUCH, STRAP (JTAG)
+  # GPIO45 - STRAP (VSPI)
+  # GPIO46 - STRAP (LOG)
+  ## SPI Flash and PSRAM - Do not use these GPIOs
   # GPIO26 - Flash/PSRAM SPICS1
   # GPIO27 - Flash/PSRAM SPIHD
   # GPIO28 - Flash/PSRAM SPIWP
@@ -17,88 +23,79 @@ substitutions:
   # GPIO31 - Flash/PSRAM SPIQ
   # GPIO32 - Flash/PSRAM SPID
 
-  #### LED ASSIGNMENT ####
+  #### LED ASSIGNMENT
   invert_status_led: "false"
-  status_led_1: GPIO48
+  status_led_1: GPIO2
+  # RTC, Analog, TOUCH
+  rgb_led_1: GPIO48
   # GPIO48 - Output only
   # Typically used for status LED
 
-  #### BUZZER ASSIGNMENT ####
-  buzzer1: GPIO0
-  # GPIO0 - Must be LOW at boot to enter download mode (can be used if careful)
-  # RTC, Analog, Output-capable
+  #### BUZZER ASSIGNMENT
+  buzzer1: $sensor21
 
-  #### GENERAL PURPOSE GPIO ####
+  #### GENERAL PURPOSE GPIO
   sensor1: GPIO1
-  # Output-capable
-  sensor2: GPIO2
-  # Output-capable
-  sensor3: GPIO3
-  # Output-capable
+  # RTC, Analog, TOUCH
   sensor4: GPIO4
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH
   sensor5: GPIO5
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH
   sensor6: GPIO6
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH
   sensor7: GPIO7
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH
   sensor8: GPIO8
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH, Default I2C SDA
   sensor9: GPIO9
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH, Default I2C SCL
   sensor10: GPIO10
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH
   sensor11: GPIO11
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH
   sensor12: GPIO12
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH
   sensor13: GPIO13
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH
   sensor14: GPIO14
-  # RTC, Analog, Output-capable
+  # RTC, Analog, TOUCH
   sensor15: GPIO15
-  # RTC, Analog, Output-capable
+  # RTC, Analog
   sensor16: GPIO16
-  # RTC, Analog, Output-capable
+  # RTC, Analog
   sensor17: GPIO17
-  # RTC, Analog, Output-capable
+  # RTC, Analog
   sensor18: GPIO18
-  # RTC, Analog, Output-capable
+  # RTC, Analog
   sensor19: GPIO19
-  # RTC, Analog, Output-capable
+  # RTC, Analog, USB_D-
   sensor20: GPIO20
-  # RTC, Analog, Output-capable
+  # RTC, Analog, USB_D+
   sensor21: GPIO21
-  # RTC, Analog, Output-capable
-
-  #### INPUT-ONLY PINS ####
+  # RTC
   sensor35: GPIO35
-  # Input-only
+  # FSPID
   sensor36: GPIO36
-  # Input-only
+  # FSPICLK
   sensor37: GPIO37
-  # Input-only
+  # FSPIQ
   sensor38: GPIO38
-  # Input-only
+  # FSPIWP
   sensor39: GPIO39
-  # Input-only
+  # MTCK
   sensor40: GPIO40
-  # Input-only
+  # MTDO
   sensor41: GPIO41
-  # Input-only
+  # MTDI
   sensor42: GPIO42
-  # Input-only
-  sensor45: GPIO45
-  # Input-only
+  # MTMS
   sensor47: GPIO47
-  # Input-only
   sensor48: GPIO48
-  # Output-only, often used for status LED
+  # Connected to RGB LED in some boards
 
-  #### SPI PINOUT ####
-  spi_clk0: $sensor14
-  # GPIO14 - SPI CLK
+  #### SPI PINOUT
+  spi_clk0: $sensor12
+  # GPIO12 - SPI CLK
   spi_cs0: $sensor10
   # GPIO10 - SPI CS
   spi_mosi0: $sensor11
@@ -115,13 +112,13 @@ substitutions:
   spi_miso1: $sensor37
   # GPIO37 - VSPI MISO
 
-  #### I2C PINOUT ####
-  sdapin: GPIO8
+  #### I2C PINOUT
+  sdapin: $sensor8
   # GPIO8 - Default I2C SDA on ESP32-S3
-  sclpin: GPIO9
+  sclpin: $sensor9
   # GPIO9 - Default I2C SCL on ESP32-S3
 
-  #### UART PINOUT ####
+  #### UART PINOUT
   uart0_tx: GPIO43
   # GPIO43 - Default UART0 TX
   uart0_rx: GPIO44
