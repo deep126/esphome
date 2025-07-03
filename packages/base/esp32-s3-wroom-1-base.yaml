@@ -1,0 +1,141 @@
+substitutions:
+
+  #### BOARD METADATA ####
+  name: esp32-s3-wroom-1
+  project_name: deep126.esp32-s3-wroom-1-esphome-panel
+  project_version: "25.5.31"
+  board: esp32-s3-devkitc-1
+
+  #### PIN MAPPING ####
+  #### UNUSED ####
+  # SPI Flash and PSRAM - Do not use these GPIOs
+  # GPIO26 - Flash/PSRAM SPICS1
+  # GPIO27 - Flash/PSRAM SPIHD
+  # GPIO28 - Flash/PSRAM SPIWP
+  # GPIO29 - Flash/PSRAM SPICS0
+  # GPIO30 - Flash/PSRAM SPICLK
+  # GPIO31 - Flash/PSRAM SPIQ
+  # GPIO32 - Flash/PSRAM SPID
+
+  #### LED ASSIGNMENT ####
+  invert_status_led: "false"
+  status_led_1: GPIO48
+  # GPIO48 - Output only
+  # Typically used for status LED
+
+  #### BUZZER ASSIGNMENT ####
+  buzzer1: GPIO0
+  # GPIO0 - Must be LOW at boot to enter download mode (can be used if careful)
+  # RTC, Analog, Output-capable
+
+  #### GENERAL PURPOSE GPIO ####
+  sensor1: GPIO1
+  # Output-capable
+  sensor2: GPIO2
+  # Output-capable
+  sensor3: GPIO3
+  # Output-capable
+  sensor4: GPIO4
+  # RTC, Analog, Output-capable
+  sensor5: GPIO5
+  # RTC, Analog, Output-capable
+  sensor6: GPIO6
+  # RTC, Analog, Output-capable
+  sensor7: GPIO7
+  # RTC, Analog, Output-capable
+  sensor8: GPIO8
+  # RTC, Analog, Output-capable
+  sensor9: GPIO9
+  # RTC, Analog, Output-capable
+  sensor10: GPIO10
+  # RTC, Analog, Output-capable
+  sensor11: GPIO11
+  # RTC, Analog, Output-capable
+  sensor12: GPIO12
+  # RTC, Analog, Output-capable
+  sensor13: GPIO13
+  # RTC, Analog, Output-capable
+  sensor14: GPIO14
+  # RTC, Analog, Output-capable
+  sensor15: GPIO15
+  # RTC, Analog, Output-capable
+  sensor16: GPIO16
+  # RTC, Analog, Output-capable
+  sensor17: GPIO17
+  # RTC, Analog, Output-capable
+  sensor18: GPIO18
+  # RTC, Analog, Output-capable
+  sensor19: GPIO19
+  # RTC, Analog, Output-capable
+  sensor20: GPIO20
+  # RTC, Analog, Output-capable
+  sensor21: GPIO21
+  # RTC, Analog, Output-capable
+
+  #### INPUT-ONLY PINS ####
+  sensor35: GPIO35
+  # Input-only
+  sensor36: GPIO36
+  # Input-only
+  sensor37: GPIO37
+  # Input-only
+  sensor38: GPIO38
+  # Input-only
+  sensor39: GPIO39
+  # Input-only
+  sensor40: GPIO40
+  # Input-only
+  sensor41: GPIO41
+  # Input-only
+  sensor42: GPIO42
+  # Input-only
+  sensor45: GPIO45
+  # Input-only
+  sensor47: GPIO47
+  # Input-only
+  sensor48: GPIO48
+  # Output-only, often used for status LED
+
+  #### SPI PINOUT ####
+  spi_clk0: $sensor14
+  # GPIO14 - SPI CLK
+  spi_cs0: $sensor10
+  # GPIO10 - SPI CS
+  spi_mosi0: $sensor11
+  # GPIO11 - SPI MOSI
+  spi_miso0: $sensor13
+  # GPIO13 - SPI MISO
+
+  spi_clk1: $sensor36
+  # GPIO36 - VSPI CLK
+  spi_cs1: $sensor39
+  # GPIO39 - VSPI CS
+  spi_mosi1: $sensor35
+  # GPIO35 - VSPI MOSI
+  spi_miso1: $sensor37
+  # GPIO37 - VSPI MISO
+
+  #### I2C PINOUT ####
+  sdapin: GPIO8
+  # GPIO8 - Default I2C SDA on ESP32-S3
+  sclpin: GPIO9
+  # GPIO9 - Default I2C SCL on ESP32-S3
+
+  #### UART PINOUT ####
+  uart0_tx: GPIO43
+  # GPIO43 - Default UART0 TX
+  uart0_rx: GPIO44
+  # GPIO44 - Default UART0 RX
+  uart1_tx: $sensor17
+  # GPIO17 - Default UART1 TX (assignable)
+  uart1_rx: $sensor18
+  # GPIO18 - Default UART1 RX (assignable)
+
+#### ADDITIONAL PACKAGES ####
+packages:
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files: 
+      - packages/core/esp32-core.yaml
