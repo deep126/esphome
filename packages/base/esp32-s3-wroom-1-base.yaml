@@ -27,9 +27,8 @@ substitutions:
   invert_status_led: "false"
   status_led_1: GPIO2
   # RTC, Analog, TOUCH
-  rgb_led_1: GPIO48
-  # GPIO48 - Output only
-  # Typically used for status LED
+  rgb_led_1: $sensor48
+  rgb_led_1_length: 1
 
   #### BUZZER ASSIGNMENT
   buzzer1: $sensor21
