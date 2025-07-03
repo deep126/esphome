@@ -3,10 +3,6 @@ substitutions:
   
 esp32:
   board: ${board}
-
-sensor:
-  - platform: esp32_hall
-    name: "ESP32 Hall Sensor" # optional but fun
     
 packages:
   remote_package:
