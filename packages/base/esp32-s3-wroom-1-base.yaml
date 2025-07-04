@@ -1,5 +1,7 @@
-substitutions:
+#### BOARD SPECIFIC COMPONENTS ####
+psram:
 
+substitutions:
   #### BOARD METADATA ####
   name: esp32-s3-wroom-1
   project_name: deep126.esp32-s3-wroom-1-esphome-panel
