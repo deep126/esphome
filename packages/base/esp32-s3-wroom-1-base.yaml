@@ -6,8 +6,24 @@ substitutions:
   project_version: "25.7.3"
   board: esp32-s3-devkitc-1
 
+  #### BOARD SPECIFIC SETTINGS ####
+
+  #### MEMORY
+  heap_threshold: "80000"
+  
   #### PIN MAPPING ####
   
+  #### LED ASSIGNMENT
+  invert_status_led: "false"
+  status_led_1: GPIO2
+  # RTC, Analog, TOUCH
+  rgb_status_led: $sensor48
+  rgb_status_led_length: "1"
+  rgb_status_led_order: GRB
+
+  #### BUZZER ASSIGNMENT
+  buzzer1: $sensor21
+
   #### UNUSED
   ## STRAP
   # GPIO0 - RTC, STRAP (BOOT), Must be LOW at boot to enter download mode
@@ -22,17 +38,6 @@ substitutions:
   # GPIO30 - Flash/PSRAM SPICLK
   # GPIO31 - Flash/PSRAM SPIQ
   # GPIO32 - Flash/PSRAM SPID
-
-  #### LED ASSIGNMENT
-  invert_status_led: "false"
-  status_led_1: GPIO2
-  # RTC, Analog, TOUCH
-  rgb_status_led: $sensor48
-  rgb_status_led_length: "1"
-  rgb_status_led_order: GRB
-
-  #### BUZZER ASSIGNMENT
-  buzzer1: $sensor21
 
   #### GENERAL PURPOSE GPIO
   sensor1: GPIO1
