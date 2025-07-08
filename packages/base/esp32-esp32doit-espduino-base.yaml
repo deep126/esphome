@@ -6,6 +6,11 @@ substitutions:
   project_version: "25.5.31"
   board: esp32doit-espduino
 
+  #### BOARD SPECIFIC SETTINGS ####
+
+  #### MEMORY
+  heap_threshold: "80000"
+  
   #### PIN MAPPING ####
   
   #### UNUSED
@@ -130,3 +135,5 @@ packages:
     refresh: 5min
     files: 
       - packages/core/esp32-core.yaml
+      - packages/core/memtools-esp32.yaml
+      - packages/core/hall_sensor.yaml
