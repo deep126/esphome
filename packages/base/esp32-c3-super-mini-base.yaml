@@ -2,7 +2,7 @@ substitutions:
 
   #### BOARD METADATA ####
   name: esp32-c3-super-mini
-  project_name: deep126.esp32-c3-super-mini-esphome-panel
+  project_name: deep126.esp32-c3-super-mini-esphome
   project_version: "26.7.30"
   variant: esp32c3
 
