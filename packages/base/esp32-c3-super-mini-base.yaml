@@ -3,7 +3,7 @@ substitutions:
   #### BOARD METADATA ####
   name: esp32-c3-super-mini
   project_name: deep126.esp32-c3-super-mini-esphome-panel
-  project_version: "25.5.31"
+  project_version: "26.7.30"
   variant: esp32c3
 
   #### BOARD SPECIFIC SETTINGS ####
@@ -13,10 +13,14 @@ substitutions:
   
   #### PIN MAPPING ####
   
+  #### UNUSED
+  # GPIO0:
+  # Connect to ground on boot to flash
+  # outputs PWM signal at boot, must be LOW to enter flashing mode
+
   #### LED ASSIGNMENT
-  invert_status_led: "false"
-  status_led_1: GPIO2
-  # Pulled LOW, RTC, Analog, TOUCH
+  invert_status_led: "true"
+  status_led_1: $sensor8
 
   #### BUZZER ASSIGNMENT
   buzzer1: $sensor1
@@ -24,6 +28,8 @@ substitutions:
   #### GENERAL PURPOSE GPIO
   sensor1: GPIO1
   # A1
+  sensor2: GPIO2
+  # A2
   sensor3: GPIO3
   # A3
   sensor4: GPIO4
@@ -35,33 +41,36 @@ substitutions:
   sensor7: GPIO7
   # SS
   sensor8: GPIO8
-  # SDA
+  # SDA, LED (active LOW)
   sensor9: GPIO9
-  # SCL
+  # SCL, Boot (strapping)
   sensor10: GPIO10
   # RX
   sensor20: GPIO20
-  # RX
+  # UART/RX
   sensor21: GPIO21
-  # TX
+  # UART/TX
 
   
   #### SPI PINOUT 
   spi_sck: $sensor4
-  # GPI04
+  # GPIO4
   spi_ss: $sensor7
-  # GPI07
+  # GPIO7
   spi_mosi: $sensor6
-  # GPI06
+  # GPIO6
   spi_miso: $sensor5
-  # GPI019
+  # GPIO5
   
 
   #### I2C PINOUT
-  sdapin: $sensor8
-  # I2C SDA, GPIO8
-  sclpin: $sensor9
-  # I2C SCL, GPIO9
+  # Moved from default GPIO8/GPIO9 to preserve onboard LA and BOOT button
+  sdapin: $sensor2
+  sclpin: $sensor3
+
+  #### UART PINOUT
+  uart_rx: $sensor20
+  uart_tx: $sensor21
 
 #### ADDITIONAL PACKAGES
 packages:
