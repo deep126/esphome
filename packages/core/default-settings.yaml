@@ -64,8 +64,8 @@ sensor:
   - platform: debug
     loop_time:
       name: "Loop Time"
-      entity_category: diagnostic
-
+    cpu_frequency:
+      name: "CPU Frequency"
 button:
   - platform: restart
     name: "Restart"
