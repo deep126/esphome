@@ -6,6 +6,11 @@ substitutions:
   project_version: "25.5.31"
   variant: esp32c3
 
+  #### BOARD SPECIFIC SETTINGS ####
+
+  #### MEMORY
+  heap_threshold: "20000"
+  
   #### PIN MAPPING ####
   
   #### LED ASSIGNMENT
