@@ -2,8 +2,8 @@ substitutions:
   buzzer_platform: ledc
   
 esp32:
-  board: ${board}
-    
+  variant: ${variant}
+  
 packages:
   remote_package:
     url: http://github.com/deep126/esphome
