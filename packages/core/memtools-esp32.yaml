@@ -2,5 +2,7 @@ sensor:
   - platform: debug
     free:
       name: "Heap Free"
+    min_free:
+      name: "Heap Min Free"
     block:
       name: "Heap Max Block"
