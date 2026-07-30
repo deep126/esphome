@@ -73,6 +73,8 @@ button:
   - platform: safe_mode
     name: "Restart (Safe Mode)"
     entity_category: config
+  - platform: factory_reset
+    name: Factory Reset
 
   #### STATUS LED
 globals:
