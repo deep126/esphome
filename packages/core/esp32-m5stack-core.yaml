@@ -14,3 +14,7 @@ packages:
     refresh: 5min
     files: 
       - packages/core/default-settings.yaml
+      - packages/core/i2s-audio.yaml
+      - packages/core/i2s-microphone.yaml
+      - packages/core/i2s-speaker.yaml
+      
