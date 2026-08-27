@@ -23,18 +23,32 @@ substitutions:
   status_led_1: $sensor27
 
   #### BUZZER ASSIGNMENT
-  buzzer1: $sensor1
+  buzzer1: $sensor21
 
   #### BUTTON ASSIGNMENT
   button1: $sensor39
 
   #### GENERAL PURPOSE GPIO
   sensor19: GPIO19
+  # Built in Bit Clock
+  sensor21: GPIO21
+  # Available - buzzer
   sensor22: GPIO22
+  # Built in Speaker
   sensor23: GPIO23
+  # Built in Microphone
+  sensor25: GPIO25
+  # Available
+  sensor26: GPIO26
+  # Available
   sensor27: GPIO27
+  # Built in LED
+  sensor32: GPIO32
+  # Available
   sensor33: GPIO33
+  # Built in LR Clock
   sensor39: GPIO39
+  # Built in Button
  
   #### SPI PINOUT 
  
