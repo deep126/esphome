@@ -114,6 +114,10 @@ script:
             - light.toggle: status_led_light
             - delay: 100ms
             - light.toggle: status_led_light
+            - delay: 100ms
+            - light.toggle: status_led_light
+            - delay: 100ms
+            - light.toggle: status_led_light
 
 packages:
   remote_package:
