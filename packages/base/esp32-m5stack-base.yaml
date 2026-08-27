@@ -1,0 +1,57 @@
+substitutions:
+
+  #### BOARD METADATA ####
+  name: esp32-c3-super-mini
+  project_name: deep126.esp32-m5stack-voice-esphome
+  project_version: "26.8.27"
+  board: m5stack-atom
+
+  #### BOARD SPECIFIC SETTINGS ####
+
+  #### MEMORY
+  heap_threshold: "20000"
+  
+  #### PIN MAPPING ####
+  
+  #### UNUSED
+  # GPIO0:
+  # Connect to ground on boot to flash
+  # outputs PWM signal at boot, must be LOW to enter flashing mode
+
+  #### LED ASSIGNMENT
+  invert_status_led: "true"
+  status_led_1: $sensor27
+
+  #### BUZZER ASSIGNMENT
+  buzzer1: $sensor1
+
+  #### BUTTON ASSIGNMENT
+  button1: $sensor39
+
+  #### GENERAL PURPOSE GPIO
+  sensor19: GPIO19
+  sensor22: GPIO22
+  sensor23: GPIO23
+  sensor27: GPIO27
+  sensor33: GPIO33
+  sensor39: GPIO39
+ 
+  #### SPI PINOUT 
+ 
+  #### I2C PINOUT
+
+  i2s_lrclk: $sensor33
+  i2s_bclk: $sensor19
+  i2s_din: $sensor23
+  i2s_dout: $sensor22
+
+  #### UART PINOUT
+
+#### ADDITIONAL PACKAGES
+packages:
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files: 
+      - packages/core/esp32-m5stack-core.yaml
