@@ -1,0 +1,4 @@
+i2s_audio:
+  - id: i2s_audio_bus
+    i2s_lrclk_pin: $i2s_lrclk
+    i2s_bclk_pin: $i2s_bclk
