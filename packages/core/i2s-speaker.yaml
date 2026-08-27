@@ -1,0 +1,9 @@
+speaker:
+  - platform: i2s_audio
+    id: esp_speaker
+    i2s_dout_pin: $i2s_dout
+    dac_type: external
+    bits_per_sample: 16bit
+    sample_rate: 16000
+    channel: stereo 
+    buffer_duration: 60ms
