@@ -1,0 +1,24 @@
+light:
+  - platform: esp32_rmt_led_strip
+    id: led
+    name: None
+    disabled_by_default: true
+    entity_category: config
+    pin: $status_led_1
+    default_transition_length: 0s
+    chipset: $led_chipset
+    num_leds: $num_leds
+    rgb_order: $rgb_order
+    effects:
+      - pulse:
+          name: "Slow Pulse"
+          transition_length: 250ms
+          update_interval: 250ms
+          min_brightness: 50%
+          max_brightness: 100%
+      - pulse:
+          name: "Fast Pulse"
+          transition_length: 100ms
+          update_interval: 100ms
+          min_brightness: 50%
+          max_brightness: 100%
