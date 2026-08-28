@@ -11,3 +11,4 @@ packages:
     refresh: 5min
     files: 
       - packages/core/default-settings.yaml
+      - packages/components/status-led.yaml
