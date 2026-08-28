@@ -1,0 +1,8 @@
+light:
+  - platform: status_led
+    name: "Status LED Light"
+    disabled_by_default: true
+    id: led
+    pin:
+      number: $status_led_1
+      inverted: $invert_status_led
