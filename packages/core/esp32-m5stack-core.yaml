@@ -14,6 +14,7 @@ packages:
     refresh: 5min
     files: 
       - packages/core/default-settings.yaml
+      - packages/components/rgb-status-led.yaml
       - packages/components/i2s-audio.yaml
       - packages/components/i2s-microphone.yaml
       - packages/components/i2s-speaker.yaml
