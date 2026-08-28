@@ -74,7 +74,8 @@ switch:
 light:
   - platform: status_led
     name: "Status LED Light"
-    id: status_led_light
+    disabled_by_default: true
+    id: led
     pin:
       number: $status_led_1
       inverted: $invert_status_led
@@ -86,9 +87,13 @@ script:
           condition:
             lambda: return id(blink_on_state);
           then:
-            - light.toggle: status_led_light
+            - light.toggle: led
             - delay: 100ms
-            - light.toggle: status_led_light
+            - light.toggle: led
+            - delay: 100ms
+            - light.toggle: led
+            - delay: 100ms
+            - light.toggle: led
 
 web_server:
   include_internal: true
