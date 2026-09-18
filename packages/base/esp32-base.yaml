@@ -1,0 +1,148 @@
+substitutions:
+
+  #### BOARD METADATA ####
+  name: esp32
+  project_name: deep126.esp-wroom-32-esphome-panel
+  project_version: "26.9.18"
+  variant: esp32
+
+  #### MEMORY
+  heap_threshold: "80000"
+  
+  #### PIN MAPPING ####
+
+  #### UNUSED
+  # INTERNAL - Typically not used, need to solder pins to use
+  # Connected to SPI Flash IC
+  # internal6: GPIO6
+  # SPICLK/SDCLK
+  # internal7: GPIO7
+  # SPIQ/SDDATA2
+  # internal8: GPIO8
+  # SPID/SDDATA1
+  # internal9: GPIO9
+  # SPIHD/SDDATA2
+  # internal10: GPIO10
+  # SPIWP/SDDATA3
+  # internal11: GPIO11
+  # SPICS0/SDSMD
+  
+  #### LED ASSIGNMENT
+  invert_status_led: "false"
+  status_led_1: $sensor2
+
+  #### BUZZER ASSIGNMENT
+  buzzer1: GPIO0
+  # Pulled HIGH. Connected to BOOT Button, can use as output
+  # RTC, Analog
+
+  #### GENERAL PURPOSE GPIO
+  sensor1: GPIO1
+  # UART0_TXD
+  sensor2: GPIO2
+  # Pulled LOW, RTC, Analog, TOUCH  
+  sensor3: GPIO3
+  # UART0_RXD
+  sensor4: GPIO4
+  # Pulled LOW
+  # RTC, Analog, TOUCH
+  sensor5: GPIO5
+  # CAN'T USE WHEN USING SPI0
+  # Pulled HIGH
+  # VSPI_CS0
+  sensor12: GPIO12
+  # CAN'T USE WHEN USING SPI1
+  # Pulled LOW - Boot fails if pulled HIGH
+  # RTC, Analog, TOUCH
+  # HSPI_MISO
+  sensor13: GPIO13
+  # CAN'T USE WHEN USING SPI1
+  # RTC, Analog, TOUCH
+  # HSPI_MOSI
+  sensor14: GPIO14
+  # CAN'T USE WHEN USING SPI1
+  # RTC, Analog, TOUCH
+  # HSPI_CLK
+  sensor15: GPIO15
+  # CAN'T USE WHEN USING SPI1
+  # Pulled HIGH
+  # RTC, Analog, TOUCH
+  # HSPI_CS0
+  sensor16: GPIO16
+  # UART2_RXD
+  sensor17: GPIO17
+  # UART2_TXD
+  sensor18: GPIO18
+  # CAN'T USE WHEN USING SPI0
+  # VSPI_CLK
+  sensor19: GPIO19
+  # CAN'T USE WHEN USING SPI0
+  # VSPI_MISO
+  sensor21: GPIO21
+  # I2C SDA
+  sensor22: GPIO22
+  # I2C SCL
+  sensor23: GPIO23
+  # CAN'T USE WHEN USING SPI0
+  # VSPI_MOSI
+  sensor25: GPIO25
+  # RTC, Analog, DAC Channel 1
+  sensor26: GPIO26
+  # RTC, Analog, DAC Channel 2
+  sensor27: GPIO27
+  # RTC, Analog, TOUCH
+  sensor32: GPIO32
+  # RTC, Analog, TOUCH
+  sensor33: GPIO33
+  # RTC, Analog, TOUCH
+  sensor34: GPIO34
+  # INPUT ONLY
+  # RTC, Analog
+  sensor35: GPIO35
+  # INPUT ONLY
+  # RTC, Analog
+  sensor36: GPIO36
+  # INPUT ONLY
+  # RTC, Analog
+  sensor39: GPIO39
+  # INPUT ONLY
+  # RTC, Analog
+
+  #### SPI PINOUT 
+  spi_clk0: $sensor18
+  # GPI018
+  spi_cs0: $sensor5
+  # GPI05
+  spi_mosi0: $sensor23
+  # GPI023
+  spi_miso0: $sensor19
+  # GPI019
+  spi_clk1: $sensor14
+  # GPI014
+  spi_cs1: $sensor15
+  # GPI015
+  spi_mosi1: $sensor13
+  # GPI013
+  spi_miso1: $sensor12
+  # GPI012
+  
+  #### INPUT ONLY PINS
+  input34: $sensor34
+  input35: $sensor35
+  input36: $sensor36
+  input39: $sensor39
+
+  #### I2C PINOUT
+  sdapin: $sensor21
+  sclpin: $sensor22
+
+#### ADDITIONAL PACKAGES
+packages:
+  remote_package:
+    url: http://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files: 
+      - packages/core/esp32-core.yaml
+      - packages/core/memtools-esp32.yaml
+      - packages/core/hall_sensor.yaml
