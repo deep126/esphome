@@ -1,0 +1,16 @@
+esp32_ble_server:
+
+# Source configuration
+external_components:
+  - source: github://dennispg/esphome-fastcon@main
+
+# Controller configuration
+fastcon:
+  mesh_key: $fastcon_key    # Your mesh key in hex format
+
+  # Optional parameters to control the advertisdement protocol with their defaults:
+  adv_interval_min: 0x20  # Minimum advertisement interval
+  adv_interval_max: 0x40  # Maximum advertisement interval
+  adv_duration: 50        # Advertisement duration in milliseconds
+  adv_gap: 10             # Gap between advertisements in milliseconds
+  max_queue_size: 100     # Maximum number of queued commands
