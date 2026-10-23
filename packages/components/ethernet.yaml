@@ -1,0 +1,9 @@
+ethernet:
+  type: $eth_type
+  mdc_pin: $eth_mdc
+  mdio_pin: $eth_mdio
+  clk:
+    pin: $eth_clk
+    mode: $eth_clk_mode
+  phy_addr: $eth_phy_addr
+  power_pin: $eth_power
