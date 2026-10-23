@@ -1,0 +1,236 @@
+
+substitutions:
+
+  #### BOARD METADATA ####
+  name: esp32-gemmy
+  project_name: deep126.esp32-gemmy-883047
+  project_version: "26.10.23"
+  variant: esp32
+
+  #### MEMORY ####
+  heap_threshold: "80000"
+
+  #### BOARD INFORMATION ####
+  # Gemmy Orchestra of Lights Hub
+  # Model: 883047
+  # PCB Revision: V1.4
+  # ESP32-WROOM-32
+  # Ethernet PHY: RTL8201
+  # Ethernet and Bluetooth capable
+  # 3.3V UART programming header
+
+  #### PIN MAPPING ####
+
+  #### UNUSED ####
+  # INTERNAL - Connected to SPI Flash IC
+  # DO NOT USE
+  # internal6: GPIO6
+  # SPICLK/SDCLK
+  # internal7: GPIO7
+  # SPIQ/SDDATA0
+  # internal8: GPIO8
+  # SPID/SDDATA1
+  # internal9: GPIO9
+  # SPIHD/SDDATA2
+  # internal10: GPIO10
+  # SPIWP/SDDATA3
+  # internal11: GPIO11
+  # SPICS0
+
+  #### ETHERNET ASSIGNMENT ####
+  # RTL8201 Ethernet PHY
+  # Dedicated onboard connections
+  eth_type: RTL8201
+  eth_mdc: $sensor23
+  eth_mdio: $sensor18
+  eth_clk: $sensor0
+  eth_clk_mode: CLK_EXT_IN
+  eth_power: $sensor4
+  eth_phy_addr: "0"
+
+  #### LED ASSIGNMENT ####
+  # Onboard LEDs are active LOW
+  invert_status_led: "true"
+  status_led_1: $sensor16
+  status_led_2: $sensor17
+
+  #### BUTTON ASSIGNMENT ####
+  # Onboard button, active LOW
+  button1: $sensor32
+  invert_button1: "true"
+
+  #### BUZZER ASSIGNMENT ####
+  # No onboard buzzer confirmed
+  # buzzer1:
+
+  #### GENERAL PURPOSE GPIO ####
+  sensor0: GPIO0
+  # RESERVED - Ethernet clock (CLK_EXT_IN)
+  # Pulled HIGH - Boot strapping pin
+  # BOOT / flashing mode when pulled LOW
+  # RTC, Analog, TOUCH
+
+  sensor1: GPIO1
+  # UART0_TXD
+  # Connected to programming header
+  # Serial logging / flashing
+
+  sensor2: GPIO2
+  # Boot strapping pin
+  # Must not be forced HIGH during download mode
+  # RTC, Analog, TOUCH
+  # PCB availability unverified
+
+  sensor3: GPIO3
+  # UART0_RXD
+  # Connected to programming header
+  # Serial flashing
+
+  sensor4: GPIO4
+  # RESERVED - Ethernet PHY power
+  # RTC, Analog, TOUCH
+
+  sensor5: GPIO5
+  # Boot strapping pin
+  # VSPI_CS0
+  # PCB availability unverified
+
+  sensor12: GPIO12
+  # Boot strapping pin
+  # Pulled LOW - Boot may fail if HIGH
+  # RTC, Analog, TOUCH
+  # HSPI_MISO
+  # PCB availability unverified
+
+  sensor13: GPIO13
+  # RTC, Analog, TOUCH
+  # HSPI_MOSI
+  # PCB availability unverified
+
+  sensor14: GPIO14
+  # RTC, Analog, TOUCH
+  # HSPI_CLK
+  # PCB availability unverified
+
+  sensor15: GPIO15
+  # Boot strapping pin
+  # RTC, Analog, TOUCH
+  # HSPI_CS0
+  # PCB availability unverified
+
+  sensor16: GPIO16
+  # RESERVED - Onboard status LED
+  # Active LOW
+  # UART2_RXD
+
+  sensor17: GPIO17
+  # RESERVED - Onboard red LED
+  # Active LOW
+  # UART2_TXD
+
+  sensor18: GPIO18
+  # RESERVED - Ethernet MDIO
+  # VSPI_CLK
+
+  sensor19: GPIO19
+  # VSPI_MISO
+  # PCB availability unverified
+
+  sensor21: GPIO21
+  # I2C SDA
+  # PCB availability unverified
+
+  sensor22: GPIO22
+  # I2C SCL
+  # PCB availability unverified
+
+  sensor23: GPIO23
+  # RESERVED - Ethernet MDC
+  # VSPI_MOSI
+
+  sensor25: GPIO25
+  # RTC, Analog, DAC Channel 1
+  # PCB availability unverified
+
+  sensor26: GPIO26
+  # RTC, Analog, DAC Channel 2
+  # PCB availability unverified
+
+  sensor27: GPIO27
+  # RTC, Analog, TOUCH
+  # PCB availability unverified
+
+  sensor32: GPIO32
+  # RESERVED - Onboard button
+  # Active LOW
+  # RTC, Analog, TOUCH
+
+  sensor33: GPIO33
+  # RTC, Analog, TOUCH
+  # PCB availability unverified
+
+  sensor34: GPIO34
+  # INPUT ONLY - No internal pull-up/pull-down
+  # RTC, Analog
+  # PCB availability unverified
+
+  sensor35: GPIO35
+  # INPUT ONLY - No internal pull-up/pull-down
+  # RTC, Analog
+  # PCB availability unverified
+
+  sensor36: GPIO36
+  # INPUT ONLY - No internal pull-up/pull-down
+  # RTC, Analog
+  # PCB availability unverified
+
+  sensor39: GPIO39
+  # INPUT ONLY - No internal pull-up/pull-down
+  # RTC, Analog
+  # PCB availability unverified
+
+  #### SPI PINOUT ####
+  # SPI0 / VSPI
+  # GPIO18 and GPIO23 are reserved for Ethernet
+  # Do not enable VSPI with these default pins
+  spi_clk0: $sensor18
+  # GPIO18 - Ethernet MDIO
+  spi_cs0: $sensor5
+  # GPIO5 - Boot strapping pin
+  spi_mosi0: $sensor23
+  # GPIO23 - Ethernet MDC
+  spi_miso0: $sensor19
+  # GPIO19 - PCB availability unverified
+
+  # SPI1 / HSPI
+  # Candidate bus - PCB availability unverified
+  spi_clk1: $sensor14
+  # GPIO14
+  spi_cs1: $sensor15
+  # GPIO15 - Boot strapping pin
+  spi_mosi1: $sensor13
+  # GPIO13
+  spi_miso1: $sensor12
+  # GPIO12 - Boot strapping pin
+
+  #### INPUT ONLY PINS ####
+  input34: $sensor34
+  input35: $sensor35
+  input36: $sensor36
+  input39: $sensor39
+
+  #### I2C PINOUT ####
+  # Candidate pins - PCB availability unverified
+  sdapin: $sensor21
+  sclpin: $sensor22
+
+#### ADDITIONAL PACKAGES ####
+packages:
+  remote_package:
+    url: https://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files:
+      - packages/core/esp32-core.yaml
+      - packages/core/memtools-esp32.yaml
+      - packages/components/ethernet.yaml
