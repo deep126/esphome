@@ -6,7 +6,7 @@ external_components:
 
 # Controller configuration
 fastcon:
-  mesh_key: $fastcon_key    # Your mesh key in hex format
+  mesh_key: !secret fastcon_key    # Your mesh key in hex format
 
   # Optional parameters to control the advertisdement protocol with their defaults:
   adv_interval_min: 0x20  # Minimum advertisement interval
