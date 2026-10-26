@@ -4,8 +4,6 @@
 web_server:
   include_internal: true
 
-captive_portal:
-
 ota:
   platform: esphome
   password: !secret ota_password
