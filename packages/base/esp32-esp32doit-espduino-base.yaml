@@ -136,4 +136,3 @@ packages:
     files: 
       - packages/core/esp32-core.yaml
       - packages/core/memtools-esp32.yaml
-      - packages/core/hall_sensor.yaml
