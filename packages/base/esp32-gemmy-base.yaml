@@ -234,3 +234,4 @@ packages:
       - packages/core/esp32-core.yaml
       - packages/core/memtools-esp32.yaml
       - packages/components/ethernet.yaml
+      - packages/core/status-led-2.yaml
