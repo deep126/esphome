@@ -61,7 +61,7 @@ substitutions:
 
   #### BUZZER ASSIGNMENT ####
   # No onboard buzzer confirmed
-  # buzzer1:
+  buzzer1: $sensor1
 
   #### GENERAL PURPOSE GPIO ####
   sensor0: GPIO0
