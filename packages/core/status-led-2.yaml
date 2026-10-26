@@ -1,7 +1,7 @@
 light:
   - platform: status_led
     name: "Status LED Light 2"
-    id: status_led_light_2
+    id: led_2
     pin:
       number: $status_led_2
       inverted: $invert_status_led
@@ -9,10 +9,10 @@ light:
 script:
   - id: blink_status_led_2
     then:
-      - light.toggle: status_led_light
+      - light.toggle: led_2
       - delay: 100ms
-      - light.toggle: status_led_light
+      - light.toggle: led_2
       - delay: 100ms
-      - light.toggle: status_led_light
+      - light.toggle: led_2
       - delay: 100ms
-      - light.toggle: status_led_light
+      - light.toggle: led_2
