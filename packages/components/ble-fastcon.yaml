@@ -1,4 +1,3 @@
-esp32_ble_tracker:
 esp32_ble_server:
 
 # Source configuration
@@ -15,3 +14,11 @@ fastcon:
   adv_duration: 50        # Advertisement duration in milliseconds
   adv_gap: 10             # Gap between advertisements in milliseconds
   max_queue_size: 100     # Maximum number of queued commands
+
+packages:
+  remote_package:
+    url: https://github.com/deep126/esphome
+    ref: master
+    refresh: 5min
+    files:
+      - packages/components/ble-tracker.yaml
